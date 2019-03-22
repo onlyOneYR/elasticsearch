@@ -4,11 +4,11 @@
 
 Alibaba Cloud Elasticsearch supports multiple features for instance management, including Kibana console, instance monitoring, instance restart, refresh, and task list.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155246605239990_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155324148939990_en-US.png)
 
 ## Kibana console {#section_pjd_ccm_zgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155246605239991_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155324148939991_en-US.png)
 
 Elasticsearch provides the Kibana console for business scaling.
 
@@ -53,14 +53,14 @@ The Task list page shows running tasks on the current instance.
 
 -   No task is running on the current instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155246605239992_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155324148939992_en-US.png)
 
 -   Tasks running on the current instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155246605239993_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155324148939993_en-US.png)
 
 -   Show detailed information about a running task.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155246605239995_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134288/155324148939995_en-US.png)
 
 
