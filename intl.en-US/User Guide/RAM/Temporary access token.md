@@ -8,19 +8,19 @@ The advantage of using the STS access token to authorize temporary users is maki
 
 1.  On the RAM console, choose **RAM Management** \> **Create Role**
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358007340209_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840209_en-US.png)
 
 2.  Select the role type. Here, the role **User** is selected.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358007340210_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840210_en-US.png)
 
 3.  Enter the type information. A subaccount of a trusted account can play the created role.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358007440211_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840211_en-US.png)
 
 4.  Enter the role name.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358007440212_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840212_en-US.png)
 
 5.  After a role is created, authorize the role. For details, see [Permission granting in RAM](../../../../../intl.en-US/User Guide/Permission management/Permission granting/Permission granting in RAM.md#) and [授权资源类型](intl.en-US/User Guide/RAM/授权资源类型.md#).
 
@@ -30,7 +30,7 @@ Before using STS for access authorization, authorize the role to be assumed by t
 
 ## Authorization of the trusted cloud account {#section_yjq_3qt_zgb .section}
 
-1.  Click **Policy Management** on the left side of the page to go to the P**olicy Management** page.
+1.  Click **Policy Management** on the left side of the page to go to the **Policy Management** page.
 2.  Click **Create Authorization Policy** on the right side of the page to go to the **Create Authorization Policy** page.
 3.  Select a **blank template** to go to the **Create Custom Authorization Policy** page.
 4.  Enter the authorization policy name and fill the following content to the policy content field.
@@ -54,7 +54,7 @@ Before using STS for access authorization, authorize the role to be assumed by t
 
     **Note:** The resource details can be obtained from the Arn field in Role Details and Basic Information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358007440213_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840213_en-US.png)
 
 5.  On the **User Management** page, authorize the permission of the role created for the subaccount. For details, see [Permission granting in RAM](../../../../../intl.en-US/User Guide/Permission management/Permission granting/Permission granting in RAM.md#).
 
