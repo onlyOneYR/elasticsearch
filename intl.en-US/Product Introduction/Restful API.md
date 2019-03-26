@@ -55,7 +55,7 @@ For more clients and plug-ins provided by communities, see [Document](http://www
 
 `Curl-X <VERB> '<PROTOCOL>: // <HOST >:< PORT>/<PATH>? <QUERY_STRING> '-d' <BODY>'`
 
--   VERB: an HTTP method: `GET`, `POST`,`PUT`, `HEAD`, `DELETE`
+-   VERB: an HTTP method: `GET`, `POST`,`PUT`, `HEAD`, and `DELETE`
 -   PROTOCOL: `http` or `https`. Use `https` only if HTTPS is enabled for Elasticsearch.
 -   HOST: the hostname of any node in your Elasticsearch cluster or `localhost` for a local node.
 -   PORT: the port that runs the Elasticsearch HTTP service. The default port number is `9200`.
