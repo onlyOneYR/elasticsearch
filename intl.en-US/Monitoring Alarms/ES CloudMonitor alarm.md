@@ -28,25 +28,25 @@ Enter mode
 
 Log on to the ES console and go to the ES instance basic information page. Click **Cluster Monitor** to go to the **ES Cloud Monitor** module.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158039982_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166539982_en-US.png)
 
 **Cloud Monitor Elasticsearch tab**
 
 Log on to the Alibaba Cloud console using your account, select **Cloud Monitor** in the product navigator, and choose Elasticsearch from the cloud service monitor menu.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158039983_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166539983_en-US.png)
 
 ## Monitor index configuration {#section_ffl_q1m_zgb .section}
 
 1.  Choose the area you want to check and click the ES instance ID.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158039984_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166539984_en-US.png)
 
 2.  Create alert policies on the index details page.
 
     On this page, you can check the historical cluster monitoring statistics. The monitoring statistics of the past month are stored. After creating alert policies, you can configure alert monitoring for this instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158139985_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166539985_en-US.png)
 
 3.  Enter the policy name and description.
 
@@ -55,19 +55,19 @@ Log on to the Alibaba Cloud console using your account, select **Cloud Monitor**
     -   The cluster status green, yellow, and red match 0.0, 1.0, and 2.0, respectively. Set the values to configure the cluster status alert indexes.
     -   Within the channel silence time, one index can trigger alerting only once.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158139986_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166639986_en-US.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158139987_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166639987_en-US.png)
 
 4.  Select the alert contact group.
 
-    To create a contact group, click **Quickly Create a Contact Group**.
+    To create a contact group, click **Quickly create a contact group**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158139988_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166639988_en-US.png)
 
 5.  Click **Confirm** to save the alert settings.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358158139989_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358166639989_en-US.png)
 
 
 **Note:** 
