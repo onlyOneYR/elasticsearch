@@ -6,7 +6,7 @@ This topic describes how to use the data synchronization feature of DataWorks to
 
 1.  Create a Hadoop cluster
 
-    You must create a Hadoop cluster to perform data migration. This topic uses the Alibaba Cloud E-MapReduce service \(EMR\) to create a Hadoop cluster. For more information, see [Create a cluster](../../../../../intl.en-US/Quick Start/Step 2 : Create a cluster.md#)Create a cluster.
+    You must create a Hadoop cluster to perform data migration. This topic uses the Alibaba Cloud E-MapReduce service \(EMR\) to create a Hadoop cluster. For more information, see [Create a cluster](../../../../../intl.en-US/Quick Start/Step 2 : Create a cluster.md#).
 
     Specifically, the following EMR Hadoop version information is used:
 
@@ -19,7 +19,7 @@ This topic describes how to use the data synchronization feature of DataWorks to
 
     Log on to the [Elasticsearch console](https://elasticsearch-cn-hangzhou.console.aliyun.com/#/instances) and select the same region and VPC network as the EMR cluster. For information about purchasing an ES instance, see [Purchase and configuration](../../../../../intl.en-US/Quick Start/Purchase and configuration.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517140067_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967740067_en-US.png)
 
 3.  DataWorks
 
@@ -30,7 +30,7 @@ This topic describes how to use the data synchronization feature of DataWorks to
 
 To create test data in the Hadoop cluster, follow these steps:
 
-1.  Log on to the [EMR console](https://emr.console.aliyun.com/), go to Old EMR Scheduling, and in the left-side navigation pane, click **Notebook**.
+1.  Log on to the [EMR](https://emr.console.aliyun.com/) console, go to Old EMR Scheduling, and in the left-side navigation pane, click **Notebook**.
 
 2.  Click **File** \> **New notebook**. In this example, a notebook named **es\_test\_hive** is created. Set the default type to **Hive**. The attached cluster is the EMR Hadoop cluster created.
 
@@ -54,7 +54,7 @@ To create test data in the Hadoop cluster, follow these steps:
 
 4.  Click **Run**. If the message **Query executed successfully** displays, then the table **hive\_esdoc\_good\_sale** was created successfully in the EMR Hadoop cluster, as shown in the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517140070_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967740070_en-US.png)
 
 5.  Insert test data. You can import data from OSS, or other data sources, or insert data manually. This example inserts data manually. The script for inserting data is as follows:
 
@@ -78,7 +78,7 @@ To create test data in the Hadoop cluster, follow these steps:
 
     3.  In the left-side navigation pane, click **Hosts** to view thes master nodes and core nodes, as shown in the following figure.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517140072_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967740072_en-US.png)
 
         **Note:** The master node name of a Non-HA EMR Hadoop cluster is generally **emr-header-1**, and the core node name is generally **emr-worker-X**.
 
@@ -86,7 +86,7 @@ To create test data in the Hadoop cluster, follow these steps:
 
 **Note:** The ECS master node logon password is the password you set when you created your EMR Hadoop cluster.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517140073_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967740073_en-US.png)
 
          
 
@@ -94,11 +94,11 @@ To create test data in the Hadoop cluster, follow these steps:
 
     1.  In the DataWorks console, go to the Data Integration page, select **Resource Group** \> **Add resources Group**. For more information about custom resource group, see [Add task resources](../../../../../intl.en-US/User Guide/Data integration/Common configuration/Add task resources.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517140074_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967740074_en-US.png)
 
     2.  Enter the name of the resource group and the server information. The server is the master node of your EMR cluster.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240075_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967740075_en-US.png)
 
         -   **Network type** is a **proprietary network \(VPC\)**.
 
@@ -116,19 +116,19 @@ To create test data in the Hadoop cluster, follow these steps:
 
         If the status is unavailable, log on to the master node and run the `tail –f/home/admin/alisatasknode/logs/heartbeat.log` command to check whether the heartbeat message between DataWorks and the master node has timed out.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240076_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967740076_en-US.png)
 
 3.  Create a data source
 
     1.  In the Data Integration page of DataWorks, click **Data Sources** \> **New source**, and select **HDFS**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240077_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967840077_en-US.png)
 
     2.  In the New HDFS Data Sources panel, set the **Name** and **defaultFS** parameters.
 
 **Note:** For a EMR Hadoop cluster, if it is a non-HA cluster, the address is set to `hdfs://emr-header-1的IP:9000`. If it is an HA cluster, the address is set to `hdfs://emr-header-1的IP:8020`. In this example, emr-header-1 and DataWorks are connected through a VPC network, so an intranet IP is set, and the test connectivity is unavailable.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240078_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967840078_en-US.png)
 
 4.  Configure a data synchronization task
 
@@ -136,11 +136,11 @@ To create test data in the Hadoop cluster, follow these steps:
 
     2.  In the Import template panel, select the following data source type:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240079_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967840079_en-US.png)
 
     3.  After the template is imported, the synchronization task is converted to the script mode. The following figure shows the configuration script used in this topic. For more information, see [Script mode configuration](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure reader plug-in/Script mode configuration.md#). For information about Elasticsearch configuration rules, see [Configure Elasticsearch Writer](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure writer plug-in/Configure Elasticsearch Writer.md#).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240080_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967840080_en-US.png)
 
     -   The synchronization script configuration includes the following three parts: Reader, which is the configuration of the upstream data source \(that is, the target cloud product for data synchronization\); Writer, which is the configuration of your ES instance; and setting, which refers to synchronization configurations such as packet loss rate and maximum concurrency.
     -   The path parameter indicates the place where the data is stored in the Hadoop cluster. You can log on to the master node and run the `hdfs dfs –ls /user/hive/warehouse/hive_doc_good_sale` command to confirm the place. For a partition table, you do not need to specify the partitions. The data synchronization feature of DataWorks can automatically recurse to the partition path, as shown in the following figure.
@@ -169,7 +169,7 @@ To create test data in the Hadoop cluster, follow these steps:
 
     `hive_doc_esgood_sale` is the value of the index field when the data is synchronized.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240081_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967840081_en-US.png)
 
 
 ## Data query and analysis {#section_kbc_3jr_zgb .section}
@@ -183,7 +183,7 @@ To create test data in the Hadoop cluster, follow these steps:
     }
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240082_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967840082_en-US.png)
 
 2.  The following example sorts various documents by **Clicks**, in order to view the popularity of all brands.
 
@@ -196,7 +196,7 @@ To create test data in the Hadoop cluster, follow these steps:
     }
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358517240083_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134311/155358967840083_en-US.png)
 
     For more information about commands and access methods, see [Alibaba Cloud Elasticsearch documents](https://www.alibabacloud.com/help/zh/product/57736.htm) and [Elastic.co help center](https://cloud.elastic.co/?spm=a2c4g.11186623.2.33.4e81422aVNpLYG#help/).
 
