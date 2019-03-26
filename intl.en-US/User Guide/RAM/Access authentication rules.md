@@ -39,7 +39,7 @@ The following two general permission policies are provided to meet the needs for
 
 ## Authorization examples {#section_wrq_m3y_zgb .section}
 
--   [授权资源类型](intl.en-US/User Guide/RAM/授权资源类型.md#)\(for example, $regionid, $accountid, and $instanceId\).
+-   [授权资源类型](intl.en-US/User Guide/RAM/授权资源类型.md#) \(for example, $regionid, $accountid, and $instanceId\).
 -   Elasticsearch instances in the resource can be indicated by the wildcard `*`.
 
 **Authorization example 1**
