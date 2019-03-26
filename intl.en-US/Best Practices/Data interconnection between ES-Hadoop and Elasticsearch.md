@@ -20,7 +20,7 @@ This example uses the following Alibaba Cloud services:
 Follow these steps to activate the corresponding Alibaba Cloud services:
 
 1.  Activate Alibaba Cloud VPC
-    1.  On the Alibaba Cloud website, choose **Products** \> **** \> **Networking** \> **** \> **Virtual Private Cloud**, and then click **Activate Now**.
+    1.  On the Alibaba Cloud website, choose **Products** \> **Networking** \> **Virtual Private Cloud**, and then click **Activate Now**.
     2.  Log on to the VPC console, and click **Create VPC** to create a VPC.
     3.  You can manage the VPC that you have created in the console.
 
@@ -34,13 +34,13 @@ Follow these steps to activate the corresponding Alibaba Cloud services:
 
     3.  Create a bucket according to the instructions displayed on the page.
 3.  Activate Alibaba Cloud Elasticsearch
-    1.  On the Alibaba Cloud website, choose **Products** \> **** \> **Analytics & Big Data** \> **Elasticsearch**, and then the product page is displayed.
+    1.  On the Alibaba Cloud website, choose **Products** \> **Analytics & Big Data** \> **Elasticsearch**, and then the product page is displayed.
 
         **Note:** You can get a 30-day free trial.
 
     2.  After you have successfully activated Elasticsearch, you can view the newly created Elasticsearch instances in the Elasticsearch console.
 4.  Activate Alibaba Cloud E-MapReduce
-    1.  On the Alibaba Cloud website, choose **Products** \> **** \> **Analytics & Big Data** \> **E-MapReduce**, and then the product page is displayed.
+    1.  On the Alibaba Cloud website, choose **Products** \> **Analytics & Big Data** \> **E-MapReduce**, and then the product page is displayed.
     2.  Click **Buy Now**, and complete the configuration.
     3.  You can view the E-MapReduce clusters that you have created in the cluster list, and perform the following operations to verify the creation status.
         -   You can remotely log on to the clusters through a public IP address:
@@ -229,7 +229,7 @@ We recommend that you use Maven to manage projects. To use Maven, follow these s
 
     After you have run the command, you can view the JAR package named emrtoes-1.0-SNAPSHOT-jar-with-dependencies.jar of the job in the target directory of the project.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240240166_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359282740166_en-US.png)
 
 
 ## Complete the job in E-MapReduce {#section_p24_h1t_zgb .section}
@@ -276,7 +276,7 @@ We recommend that you use Maven to manage projects. To use Maven, follow these s
 
     If the job is successfully executed, the following message is displayed in the console:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240440167_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359282940167_en-US.png)
 
 
 ## Verify results {#section_nzs_n1t_zgb .section}
@@ -287,11 +287,11 @@ Run the following command to verify that the data is successfully written to Ela
 curl -u elastic -XGET es-cn-v0h0jdp990001rta9.elasticsearch.aliyuncs.com:9200/blog/_search? pretty
 ```
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240440168_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359282940168_en-US.png)
 
 You can also view the result on Kibana:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240440169_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359282940169_en-US.png)
 
 ## API analysis {#section_rnm_t1t_zgb .section}
 
