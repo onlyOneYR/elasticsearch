@@ -6,21 +6,21 @@ The advantage of using the STS access token to authorize temporary users is maki
 
 ## Create a role {#section_ryf_ypt_zgb .section}
 
-1.  On the RAM console, choose **RAM Management** \> **Create Role**
+1.  On the RAM console, choose **RAM Roles** \> **Create RAM Role**
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840209_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358066340209_en-US.png)
 
 2.  Select the role type. Here, the role **User** is selected.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840210_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358066340210_en-US.png)
 
 3.  Enter the type information. A subaccount of a trusted account can play the created role.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840211_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358066340211_en-US.png)
 
 4.  Enter the role name.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840212_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358066340212_en-US.png)
 
 5.  After a role is created, authorize the role. For details, see [Permission granting in RAM](../../../../../intl.en-US/User Guide/Permission management/Permission granting/Permission granting in RAM.md#) and [授权资源类型](intl.en-US/User Guide/RAM/授权资源类型.md#).
 
@@ -54,7 +54,7 @@ Before using STS for access authorization, authorize the role to be assumed by t
 
     **Note:** The resource details can be obtained from the Arn field in Role Details and Basic Information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358017840213_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134307/155358066340213_en-US.png)
 
 5.  On the **User Management** page, authorize the permission of the role created for the subaccount. For details, see [Permission granting in RAM](../../../../../intl.en-US/User Guide/Permission management/Permission granting/Permission granting in RAM.md#).
 
