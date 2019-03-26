@@ -144,7 +144,7 @@ Alibaba Cloud Elasticsearch instances do not support displaying request-related 
 
 After this function is enabled, the access log is output to indexes on the Elasticsearch instance. The name of indexes starts with `.security_audit_log-*`.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155357097640144_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155357105040144_en-US.png)
 
 **Audit log indexing configuration**
 
@@ -185,7 +185,7 @@ Indexing settings for remote audit logs are currently unavailable.
 
 ## Customize thread pool queue size {#section_km3_pxs_zgb .section}
 
-You can set `Thread_pool.bulk.queue_size`,`Thread_pool.write.queue_size`, and`Thread_pool.search.queue_size` to customize the queue size of the write and search thread pools, respectively..
+You can set `Thread_pool.bulk.queue_size`, `Thread_pool.write.queue_size`, and `Thread_pool.search.queue_size` to customize the queue size of the write and search thread pools, respectively.
 
 In the following example, both the write and search queue size are set to `500`.
 
