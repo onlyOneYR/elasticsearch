@@ -10,9 +10,9 @@ Follow these steps to analyze and search on-premises data:
 
 -   [Create and view a table](../../../../../intl.en-US/Quick Start/Create and view a table.md#), and [import data](../../../../../intl.en-US/Quick Start/Import data.md#). You can [migrate data from Hadoop to MaxCompute](../../../../../intl.en-US/Best Practices/Data migration/Migrate data from Hadoop to MaxCompute.md#), and then synchronize the data. This example uses the following table schemes and data:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175040112_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192740112_en-US.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175040113_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192740113_en-US.png)
 
 -   Create an Alibaba Cloud Elasticsearch instance to store the data that is successfully replicated by Data Integration.
 
@@ -32,13 +32,13 @@ Follow these steps to analyze and search on-premises data:
 
 **Note:** Make sure that you select the same **region**, **VPC**, and **VSwitch** with the VPC that you have created in the preceding step.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175040114_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192740114_en-US.png)
 
     3.  Purchase an ECS instance that is in the same VPC as your Elasticsearch instance, and assign a public IP address or activate EIP. To save costs, we recommend that you use an existing ECS instance that meets the requirements.
 
         This example creates an ECS instance in **Zone F of China \(Hangzhou\)**. Select **64-bit CentOS 7.4** and **Assign Public IP** to configure network settings, as shown in the following figure:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175040115_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192840115_en-US.png)
 
         **Note:** 
 
@@ -50,11 +50,11 @@ Follow these steps to analyze and search on-premises data:
 
         -   If you have already activated Data Integration, the following page is displayed:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175040116_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192840116_en-US.png)
 
         -   If you have not activated Data Integration, the following page is displayed: You must follow these steps to activate Data Integration. Activating this service incurs fees, which you can estimate based on the pricing rules.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140117_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192840117_en-US.png)
 
     2.  Click **Data Integration** under the DataWorks project.
 
@@ -66,15 +66,15 @@ Follow these steps to analyze and search on-premises data:
 
             1.  Create a resource group: Enter a resource group name. This example names the resource group as **es\_test\_resource**.
 
-                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140118_en-US.png)
+                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192840118_en-US.png)
 
             2.  Add a server.
 
-                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140119_en-US.png)
+                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192840119_en-US.png)
 
                 -   ECS UUID: [Step 3: Connect to an instance](../../../../../intl.en-US/Quick Start for Entry-Level Users/Step 3: Connect to an instance.md#). Log on to the ECS instance, and run the `dmidecode | grep UUID` command to obtain a returned value\].
 
-                    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140120_en-US.png)
+                    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192940120_en-US.png)
 
                 -   Machine IP/Machine CPUs \(Cores\)/Memory Size \(GB\): Specify the public IP address, CPU cores, and memory size of the ECS instance. Log on to the ECS console, and click the name of the instance to view the relevant information in the **Configuration Information** module.
 
@@ -86,19 +86,19 @@ Follow these steps to analyze and search on-premises data:
 
         2.  Select **MaxCompute** as the source type.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140121_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192940121_en-US.png)
 
         3.  Enter information about the data source. This example creates a data source named **odps\_es**, as shown in the following figure:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140122_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192940122_en-US.png)
 
             -   **ODPS workspace name**: On the Data Analytics page of DataWorks, the corresponding workspace name of a table is displayed on the right of the icon in the upper left corner, as shown in the following figure:
 
-                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140123_en-US.png)
+                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192940123_en-US.png)
 
             -   **AccessKeyId**/**AccessKeySecrete**: Move the pointer over your username and select **User Info**, as shown in the following figure:
 
-                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175140793_en-US.png)
+                ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192940793_en-US.png)
 
                 On the Personal Account page, move the pointer over your avatar, and click **accesskeys** as shown in the following figure:
 
@@ -106,23 +106,23 @@ Follow these steps to analyze and search on-premises data:
 
         1.  On **Data Analytics** page, click the **Data Analytics** icon in the left-side navigation pane, and click **Business Flow**.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175240797_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359192940797_en-US.png)
 
         2.  Click the target business flow, select **Data Integration**, select **Create Data Integration Node** \> **Data Sync**, and then enter the synchronization node name.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175340798_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359193040798_en-US.png)
 
         3.  After successfully creating the synchronization node, click the **Switch to Script Mode** icon at the top of the new synchronization node page, and select **Confirm**.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175340799_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359193040799_en-US.png)
 
         4.  At the top of on the Script Mode page, click the **Apply Template** icon. Enter the corresponding information for Source Type, Data Source, Destination source type and data source options, and then click **OK** to generate an initial script.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175340800_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359193040800_en-US.png)
 
-        5.  [Script mode configuration](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure reader plug-in/Script mode configuration.md#)Configure the data synchronization script. For more information about configuration rules of Elasticsearch, see [Configure Elasticsearch Writer](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure writer plug-in/Configure Elasticsearch Writer.md#)Configure writer plug-ins.
+        5.  [Configure the data synchronization script](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure reader plug-in/Script mode configuration.md#). For more information about configuration rules of Elasticsearch, see [Configure writer plug-ins](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure writer plug-in/Configure Elasticsearch Writer.md#).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175340126_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359193040126_en-US.png)
 
 **Note:** 
 
@@ -216,7 +216,7 @@ Follow these steps to analyze and search on-premises data:
 
         6.  After the script is synchronized, click **Run** to synchronize ODPS data to Alibaba Cloud Elasticsearch.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175440802_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359193040802_en-US.png)
 
 3.  Verify the result
     1.  Log on to the Alibaba Cloud Elasticsearch console, click **Kibana console** in the upper-right corner, and select **Dev Tools**.
@@ -234,7 +234,7 @@ POST /es_index/_search? pretty
 
         If data is successfully synchronized, the following page is displayed:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359175440128_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134315/155359193040128_en-US.png)
 
     3.  Run the following command to sort documents based on the trans\_num field:
 
@@ -265,7 +265,7 @@ POST /es_index/_search? pretty
         }
         ```
 
-        For more information, see [Elasticsearch access test](../../../../../intl.en-US/Quick Start/Elasticsearch access test.md#)Alibaba Cloud Elasticsearch documents and [Elastic help center](https://cloud.elastic.co/#help/).
+        For more information, see [Elasticsearch access test](../../../../../intl.en-US/Quick Start/Elasticsearch access test.md#) and [Elastic help center](https://cloud.elastic.co/#help/).
 
 
 ## FAQ {#section_mkf_brs_zgb .section}
