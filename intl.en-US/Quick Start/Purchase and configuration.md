@@ -4,7 +4,7 @@
 
 1.  You can find the Alibaba Cloud Elasticsearch product page from the Alibaba Cloud product navigation. You can also visit the [Alibaba Cloud Elasticsearch product details page](https://www.alibabacloud.com/product/elasticsearch) directly. Click **Buy Now** to go to the buy page.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356847239931_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356868039931_en-US.png)
 
 2.  Select the corresponding configuration, VPC, VSwitch, and specification based on your business needs. For more information, see [Buy page parameters](intl.en-US/Quick Start/Buy page parameters.md).
 
@@ -12,19 +12,19 @@
 
 3.  Follow the instructions on the page to complete the configuration and then click **Buy Now**. You will be redirected to the order confirmation page. Confirm the information, agree to the terms of service, and click **Activate**. The page will display that your service has been successfully activated.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356847239933_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356868039933_en-US.png)
 
 4.  After your service has been activated, click **Elasticsearch Console** to log on the Alibaba Cloud Elasticsearch console.
 
 5.  You can view the Elasticsearch instances that you have purchased on the Alibaba Cloud Elasticsearch console. Please wait until the instance is activated.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356847239935_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356868039935_en-US.png)
 
 6.  Before importing data to the activated Elasticsearch instance, you must manually create indexes and mappings. Errors may occur if the indexes and mappings are not created at the same time. For example, if data is being imported to the instance after you have deleted the existing index mappings on the instance, the instance will automatically create index mappings that do not meet your requirements. This may cause errors.
 
     To prevent this problem, the **Create Index Automatically** feature is disabled by default. You must first create indexes and mappings before importing data. Otherwise, an error will occur.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356847239936_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134282/155356868039936_en-US.png)
 
     **Note:** 
 
@@ -37,7 +37,7 @@
 
 ## Configure monitoring and alerts {#section_a1b_5jl_zgb .section}
 
-Alibaba Cloud Elasticsearch allows you to monitor instances and supports SMS message alerts. Elasticsearch also allows you to set an alert threshold. For more information, see[ES CloudMonitor alarm](../../../../../intl.en-US/Cloud Monitor/ES CloudMonitor alarm.md).
+Alibaba Cloud Elasticsearch allows you to monitor instances and supports SMS message alerts. Elasticsearch also allows you to set an alert threshold. For more information, see [ES CloudMonitor alarm](../../../../../intl.en-US/Cloud Monitor/ES CloudMonitor alarm.md).
 
 -   Cluster status
 -   Cluster query QPS \(count/second\)
