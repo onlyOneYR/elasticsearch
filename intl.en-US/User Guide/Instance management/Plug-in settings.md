@@ -2,9 +2,9 @@
 
 ## Built-in plug-ins {#section_jmw_wpt_zgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155350205640206_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155357018440206_en-US.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155350205640208_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155357018440208_en-US.png)
 
 ## Upgrade IK analyzer dictionaries {#section_d3c_xpt_zgb .section}
 
@@ -26,15 +26,15 @@ You can use the standard upgrade method to modify the IK main dictionary and sto
 
 1.  Log on to the Elasticsearch console, click the ID of the target Elasticsearch instance, click **Plug-in Settings**, and click **Standard Upgrade** for the IK analyzer.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155350205640216_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155357018440216_en-US.png)
 
 2.  Click **Configure**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155350205640217_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155357018440217_en-US.png)
 
 3.  Click **Upload Dictionary**, and then upload a .dic main dictionary file.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155350205640218_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155357018440218_en-US.png)
 
     **Note:** 
 
@@ -69,11 +69,11 @@ The procedure of updating a dictionary by using the rolling upgrade method is th
 
 1.  Log on to the Elasticsearch console, locate the target Elasticsearch instance, and click its ID. Click Plug-ins Settings, locate the IK plug-in, click Rolling Upgrade, and click Configure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155350205640222_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155357018440222_en-US.png)
 
 2.  Click Upload Dictionary, and then select a main dictionary file.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155350205740223_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134301/155357018440223_en-US.png)
 
     **Note:** 
 
