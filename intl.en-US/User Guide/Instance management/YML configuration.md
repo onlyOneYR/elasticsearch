@@ -144,7 +144,7 @@ Alibaba Cloud Elasticsearch instances do not support displaying request-related 
 
 After this function is enabled, the access log is output to indexes on the Elasticsearch instance. The name of indexes starts with `.security_audit_log-*`.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155357087040144_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155357097640144_en-US.png)
 
 **Audit log indexing configuration**
 
@@ -177,7 +177,7 @@ xpack. security. audit. index. settings:
     number_of_replicas: 1
 ```
 
-**Note:** You can pass custom settings to xpack.security.audit.index.settings when enabling audit indexing. Once you apply the change to the Elasticsearch instance, audit indexes will be available on the Elasticsearch instance. Otherwise, the elasticsearch instance audit log is set to the default`Number_of_shards: 5`,`Number_of_replicas: 1`.
+**Note:** You can pass custom settings to xpack.security.audit.index.settings when enabling audit indexing. Once you apply the change to the Elasticsearch instance, audit indexes will be available on the Elasticsearch instance. Otherwise, the elasticsearch instance audit log is set to the default `Number_of_shards: 5`, and `Number_of_replicas: 1`.
 
 **Remote audit log indexing settings**
 
