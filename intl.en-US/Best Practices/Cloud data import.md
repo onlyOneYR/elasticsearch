@@ -25,7 +25,7 @@ Take the following steps to import offline data.
 
 **Steps**
 
-1.  Buy an ECS instance that is in the same VPC as the Elasticsearch service. Allocate a public IP address to the ECS instance or enable the elastic IP address for the ECS instance. To lower costs, you can use an existing ECS instance. For how to buy an ECS instance, see [Step 2. Create an instance](../../../../../intl.en-US/Quick Start for Entry-Level Users/Step 2. Create an instance.md#)Buy an ECS instance.
+1.  Buy an ECS instance that is in the same VPC as the Elasticsearch service. Allocate a public IP address to the ECS instance or enable the elastic IP address for the ECS instance. To lower costs, you can use an existing ECS instance. For how to buy an ECS instance, see [Step 2. Create an instance](../../../../../intl.en-US/Quick Start for Entry-Level Users/Step 2. Create an instance.md#).
 
     **Note:** 
 
@@ -36,21 +36,21 @@ Take the following steps to import offline data.
 
     If Data Integration or DataWorks has been enabled, you can see:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134310/155358513840057_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134310/155358940340057_en-US.png)
 
     If Data Integration or DataWorks is not enabled, the following message is displayed. Follow the instructions to activate the Data Integration service. This is a **paid service**, so check the quoted price against your budget.
 
 3.  Go to the [Project Management-Scheduling Resource Management](https://workbench-cn-shanghai.data.aliyun.com/console#/62890/scheduleManage) page of the Data Integration service to configure the ECS instance in the VPC as a scheduling resource. For more information, see [Add task resources](../../../../../intl.en-US/User Guide/Data integration/Common configuration/Add task resources.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134310/155358513840059_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134310/155358940340059_en-US.png)
 
-4.  Configure the data synchronization script in the Data Integration service. For the configuration procedure, see [Script mode configuration](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure reader plug-in/Script mode configuration.md#)Data synchronization script configuration. For the instructions on configuring Elasticsearch, see [Configure Elasticsearch Writer](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure writer plug-in/Configure Elasticsearch Writer.md#)ES Writer.
+4.  Configure the data synchronization script in the Data Integration service. For the configuration procedure, see [Script mode configuration](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure reader plug-in/Script mode configuration.md#). For the instructions on configuring Elasticsearch, see [Configure Elasticsearch Writer](../../../../../intl.en-US/User Guide/Data integration/Task configuration/Configure writer plug-in/Configure Elasticsearch Writer.md#).
 
     **Note:** 
 
     -   The synchronization script configuration includes three parts: Reader is the configuration of upstream data source \(cloud product ready for data synchronization\), Writer is the configuration of ES, and setting refers to the synchronization configurations such as packet loss rate and maximum concurrency.
     -   The accessId and accessKey of ES Writer are the Elasticsearch user name and password, respectively.
-5.  After configuring the script, submit the data synchronization job. Set the job execution cycle and click **Ok**.
+5.  After configuring the script, submit the data synchronization job. Set the job execution cycle and click **OK**.
 
     **Note:** 
 
