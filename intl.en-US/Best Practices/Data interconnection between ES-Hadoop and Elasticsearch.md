@@ -27,7 +27,7 @@ Follow these steps to activate the corresponding Alibaba Cloud services:
         **Note:** For more information about Alibaba Cloud VPC, see [Virtual Private Cloud \(VPC\)](https://www.alibabacloud.com/help/product/27706.htm) .
 
 2.  Activate Alibaba Cloud Object Storage Service
-    1.  Log on to the Alibaba Cloud console, choose **Products** \> **** \> **** \> **Storage & CDN** \> **Object Storage Service**, and click **Buy Now**.
+    1.  Log on to the Alibaba Cloud console, choose **Products** \> **Storage & CDN** \> **Object Storage Service**, and click **Buy Now**.
     2.  Log on to the OSS console, click **Create Bucket** to create a bucket.
 
         **Note:** You must create the bucket in the same region where the E-MapReduce cluster is created. This example chooses the China \(Hangzhou\) region.
@@ -229,7 +229,7 @@ We recommend that you use Maven to manage projects. To use Maven, follow these s
 
     After you have run the command, you can view the JAR package named emrtoes-1.0-SNAPSHOT-jar-with-dependencies.jar of the job in the target directory of the project.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155358861440166_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240240166_en-US.png)
 
 
 ## Complete the job in E-MapReduce {#section_p24_h1t_zgb .section}
@@ -276,7 +276,7 @@ We recommend that you use Maven to manage projects. To use Maven, follow these s
 
     If the job is successfully executed, the following message is displayed in the console:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155358861540167_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240440167_en-US.png)
 
 
 ## Verify results {#section_nzs_n1t_zgb .section}
@@ -287,11 +287,11 @@ Run the following command to verify that the data is successfully written to Ela
 curl -u elastic -XGET es-cn-v0h0jdp990001rta9.elasticsearch.aliyuncs.com:9200/blog/_search? pretty
 ```
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155358861540168_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240440168_en-US.png)
 
 You can also view the result on Kibana:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155358861540169_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134316/155359240440169_en-US.png)
 
 ## API analysis {#section_rnm_t1t_zgb .section}
 
