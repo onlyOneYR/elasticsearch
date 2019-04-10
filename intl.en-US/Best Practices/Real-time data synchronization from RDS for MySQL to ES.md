@@ -18,9 +18,9 @@ The main SQL operation types supported are as follows:
 
 If a table using DDL is encountered in an RDS for MySQL instance, the DML operations for the corresponding table may fail. To resolve this problem, complete the following steps:
 
-1.  Delete the object from the synchronization list. For more information, see [Delete synchronization objects](https://www.alibabacloud.com/help/zh/doc-detail/26635.htm).
+1.  Delete the object from the synchronization list. For more information, see [Delete synchronization objects](https://partners-intl.aliyun.com/help/doc-detail/26635.htm).
 2.  Delete the index corresponding to this table in the ES instance.
-3.  Re-add the table to the synchronization list and re-initialize it. For more information, see [Add a synchronization object](https://www.alibabacloud.com/help/zh/doc-detail/26634.htm).
+3.  Re-add the table to the synchronization list and re-initialize it. For more information, see [Add a synchronization object](https://partners-intl.aliyun.com/help/doc-detail/26634.htm).
 
 If the DDL is used to add a column or modify a table, the order of DDL operations is as follows:
 
@@ -60,7 +60,7 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
     -   Specification
 
-        Each instance specification corresponds to the performance of a synchronization instance. For more information, see [Data Synchronization Specifications](https://www.alibabacloud.com/help/zh/doc-detail/26605.htm).
+        Each instance specification corresponds to the performance of a synchronization instance. For more information, see [Data Synchronization Specification](https://partners-intl.aliyun.com/help/doc-detail/26605.htm).
 
     -   Order Time
         -   If the synchronization instance is prepaid, the order time is one month by default.
@@ -72,7 +72,7 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
 2.  Configure your synchronization instance
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359160540099_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644940099_en-US.png)
 
     **Synchronization task name**
 
@@ -82,13 +82,13 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
     This example uses RDS for MySQL as the data source. You need to set the instance type, region and ID, and database account and password.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359160540100_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644940100_en-US.png)
 
     **Target instance**
 
     You need to configure the ID, account, and password for the ES instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359160640101_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644940101_en-US.png)
 
     Once you complete these configurations, click **Authorize Whitelist and Enter Next Step** to add IPs to RDS for MySQL and ES instance whitelists.
 
@@ -113,11 +113,11 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
         The selectable granularity of the synchronization objects supports table-level operations. This means that you can synchronize several databases and tables.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359160640102_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644940102_en-US.png)
 
     3.  By default, the docid of all tables is the primary key. If some tables do not have the primary key, configure their docid corresponding to the columns in the source tables. In the box of selected objects on the right, move the pointer over the corresponding table, and click **Edit** to enter the advanced settings pane.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359160640103_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644940103_en-US.png)
 
     4.  In advanced settings, you can configure the index name, type name, partition column and quantity, and \_id value column. If the value of \_id is set to the business primary key, you need to select the corresponding business primary key column.
 
@@ -131,9 +131,9 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
     2.  **Shard Configuration**: There are 5 partitions and 1 replica by default. Once the configuration is adjusted, all indexes define partitions according to this configuration.
 
-    3.  **String Index** is an analyzer that can select strings. By default, it is **Standard Analyzer**. Other values include: **Simple Analyzer**, **Whitespace Analyzer**, **Stop Analyzer**, **Keyword Analyzer**, **English Analyzer**, and **Figerprint Analyzer**. The string fields of all indexes define Analyzer according to this configuration.
+    3.  **String Index** is an analyzer that can select strings. By default, it is **Standard Analyzer**. Other values include: **Simple Analyzer**, **Whitespace Analyzer**, **Stop Analyzer**, **Keyword Analyzer**, **English Analyzer**, and **Fingerprint Analyzer**. The string fields of all indexes define Analyzer according to this configuration.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359160640104_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644940104_en-US.png)
 
     4.  **Time Zone** is where time fields synchronized to your ES instance are stored. The default time zone in China is UTC \(UTC +8\).
 

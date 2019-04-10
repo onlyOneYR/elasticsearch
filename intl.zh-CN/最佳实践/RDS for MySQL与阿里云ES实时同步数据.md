@@ -72,7 +72,7 @@
 
 2.  配置同步链路
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359074840099_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644540099_zh-CN.png)
 
     **同步作业名称**
 
@@ -82,13 +82,13 @@
 
     本示例采用数据源为 RDS for MySQL，需要配置RDS实例的ID、数据库账号、数据库密码。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359074940100_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644540100_zh-CN.png)
 
     **目标实例信息**
 
     目标实例信息中需要配置阿里云Elasticsearch的实例ID，及访问阿里云ES实例账号密码。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359074940101_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644540101_zh-CN.png)
 
     以上内容配置完成后，点击**授权白名单并进入下一步**进行RDS for MySQL及阿里云Elasticsearch的白名单添加。
 
@@ -113,11 +113,11 @@
 
         实时同步的同步对象的选择粒度可以支持到表级别，即用户可以选择同步某些库或某几张表。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359074940102_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644540102_zh-CN.png)
 
     3.  默认所有表的docid为表的主键，如果部分表没有主键，那么对于这部分配置docid 对应的源表的列。在右侧-已选择对象 框中，将鼠标挪到对应表上，点击右侧的 编辑 入口，进入这个表的高级设置界面。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359075040103_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644540103_zh-CN.png)
 
     4.  在高级配置中可以设置：
 
@@ -133,9 +133,9 @@
 
     2.  **索引分片配置**，默认为5个分片，1个副本。可以根据业务需要进行调整，一旦调整后，所有的索引按照这个配置定义分片。
 
-    3.  **字符串analyzer定义**，可以选择字符串的analyzer，默认为Standard Analyzer。取值包括：Standard Analyzer、Simple Analyzer、Whitespace Analyzer、Stop Analyzer、Keyword Analyzer、English Analyzer、Figerprint Analyzer，所有索引的字符串字段按照这个配置定义Analyzer。
+    3.  **字符串analyzer定义**，可以选择字符串的analyzer，默认为Standard Analyzer。取值包括：Standard Analyzer、Simple Analyzer、Whitespace Analyzer、Stop Analyzer、Keyword Analyzer、English Analyzer、Fingerprint Analyzer，所有索引的字符串字段按照这个配置定义Analyzer。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155359075040104_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155487644540104_zh-CN.png)
 
     4.  **时区**，可以配置同步到阿里云Elasticsearch中的时间字段存储的时区，默认为东八区。
 
