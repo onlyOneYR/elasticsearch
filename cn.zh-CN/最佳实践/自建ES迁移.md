@@ -2,7 +2,7 @@
 
 ## 前提条件 {#section_q1d_cht_zgb .section}
 
-自建Elasticsearch迁移至阿里云Elasticsearch必须先满足以下条件：
+本文档主要用于将基于阿里云ECS自建的ES迁移至阿里云ES，参考本文档做迁移必须先满足以下条件，如果不满足以下条件需要通过其它迁移方案做迁移，详情请参见[logstash部署](cn.zh-CN/最佳实践/logstash部署.md)：
 
 -   自建ES所在ECS必需是VPC网络（**不支持Classiclink方式打通的ECS**），并且自建ES所在ECS对应VPC必须与阿里云ES对应VPC相同。
 -   可以通过中控机器（或者任意一台机器）执行该脚本，前提是该中控机器可以同时访问新老ES集群的`9200`端口。
