@@ -10,7 +10,7 @@ Perform the following tasks before you analyze or query the on-premises data:
 
 -   Create a database. You can use an ApsaraDB RDS for MySQL database, or create a database on your local server. This example uses an ApsaraDB RDS for MySQL database. The following figure shows the dataset stored in the database:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640085_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440085_en-US.png)
 
 -   Purchase an Alibaba Cloud Elastic Compute Service \(ECS\) instance that is connected to the same VPC network as your Alibaba Cloud Elasticsearch instance. This ECS instance is used to retrieve data from data sources and run tasks to write the data to the Alibaba Cloud Elasticsearch instance. The tasks are dispatched by Data Integration.
 
@@ -23,7 +23,7 @@ Perform the following tasks before you analyze or query the on-premises data:
 
 ## Procedure {#section_cgx_spr_zgb .section}
 
-**Synchronize data**
+ **Synchronize data** 
 
 1.  [Create a VPC](../../../../../reseller.en-US/Quick Start/Create a VPC.md#).
 
@@ -31,7 +31,7 @@ Perform the following tasks before you analyze or query the on-premises data:
 
 **Note:** The **region**, **VPC network**, and the **VSwitch** that you specify for the Alibaba Cloud Elaticsearch instance must be the same as those of the VPC network that you have created in the step 1.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640086_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440086_en-US.png)
 
 3.  Purchase an ECS instance that is connected to the same VPC network as the Alibaba Cloud Elasticsearch instance, and assign a public IP address or activate Elastic IP Address \(EIP\) to the ECS instance. To save costs, we recommend that you use an existing ECS instance that meets the requirements.
 
@@ -44,11 +44,11 @@ Perform the following tasks before you analyze or query the on-premises data:
 
     -   The following page is displayed if you have already activated Data Integration:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640087_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440087_en-US.png)
 
     -   The following page is displayed if you have not activated Data Integration: Perform the following steps to activate Data Integration. Activating Data Integration incurs service fees. You can estimate the costs based on the billing items.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640088_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440088_en-US.png)
 
 5.  Click **Data Integration**.
 
@@ -56,7 +56,7 @@ Perform the following tasks before you analyze or query the on-premises data:
 
 7.  Enter the resource group name and server information as required. The server you add on this page refers to the ECS instance that you have purchased. Enter the following information:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640089_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440089_en-US.png)
 
     -   ECS UUID: enter the UUID of the ECS instance. Log on to the ECS instance and run the `dmidecode | grep UUID` command to obtain the UUID. For more information, see [Step 3: Connect to an instance](../../../../../reseller.en-US/Quick Start for Entry-Level Users/Step 3: Connect to an instance.md#).
 
@@ -70,7 +70,7 @@ Perform the following tasks before you analyze or query the on-premises data:
 
 10. Select **MySQL**. On the **Add Data Source MySQL** page, enter the required information, as shown in the following figure:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640090_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440090_en-US.png)
 
     Data Source Type: this example uses **an ApsaraDB RDS for MySQL database**. You can select **Public IP Address Available** or **Public IP Address Unavailable**. For more information about the parameters, see [Configure MySQL data source](../../../../../reseller.en-US/User Guide/Data integration/Data source configuration/Configure MySQL data source.md#).
 
@@ -78,11 +78,9 @@ Perform the following tasks before you analyze or query the on-premises data:
 
 12. In the Apply Template dialog box, choose **Source Type** \> **MySQL**. Enter the name of the data source that you have added in step 10 in the **Data Source** field and select **Elasticsearch** from the **Destination Type** drop-down list. Confirm the information and click **OK**.
 
-    ![](images/40091_en-US.png)
-
 13. Configure a data synchronization script For more information about the configuration, see [Script mode configuration](../../../../../reseller.en-US/User Guide/Data integration/Task configuration/Configure reader plug-in/Script mode configuration.md#). For more information about Alibaba Cloud Elasticsearch instance configuration rules, see [Configure Elasticsearch Writer](../../../../../reseller.en-US/User Guide/Data integration/Task configuration/Configure writer plug-in/Configure Elasticsearch Writer.md#).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640092_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440092_en-US.png)
 
     **Note:** 
 
@@ -108,7 +106,7 @@ Perform the following tasks before you analyze or query the on-premises data:
 
     testrds is the value specified in the index parameter in the data synchronization script.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013640093_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440093_en-US.png)
 
 3.  Run the following command to sort the data based on the trans\_num column:
 
@@ -139,7 +137,7 @@ Perform the following tasks before you analyze or query the on-premises data:
     }
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505013740094_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134312/155505202440094_en-US.png)
 
     For more information about how to access Elasticsearch, see [Elasticsearch access test](../../../../../reseller.en-US/Quick Start/Elasticsearch access test.md#) and [Elastic documentation](https://cloud.elastic.co/#help/).
 
