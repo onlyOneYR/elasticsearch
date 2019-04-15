@@ -18,7 +18,7 @@ Data recovery \(or data redistribution\) is the process of redistributing shards
 
 ## Gateway {#section_qq5_zbf_zgb .section}
 
-A gateway is used to store snapshots of indexes. By default, an Elasticsearch node stores all the indexes in memory. When the node memory is full, the node saves the indexes to local disks for persistent storage. Index snapshots stored on a gateway can be restored after a cluster restarts for fault recovery, which is faster than reading indexes from local disks. Elasticsearch supports multiple types of gateways, including local file system, distributed file system, Hadoop HDFS, and Amazon S3 cloud storage service.
+A gateway is used to store snapshots of indexes. By default, an Elasticsearch node stores all the indexes in memory. When the node memory is full, the node saves the indexes to local disks for persistent storage. Index snapshots stored on a gateway can be restored after a cluster restarts for fault recovery, which is faster than reading indexes from local disks. Elasticsearch supports multiple types of gateways, including local file system, distributed file system, Hadoop HDFS, and Alibaba Cloud Object Storage Service \(OSS\).
 
 ## discovery.zen {#section_e5z_zbf_zgb .section}
 
