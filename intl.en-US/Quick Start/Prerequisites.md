@@ -2,16 +2,16 @@
 
 **Access Elasticsearch from the Internet**
 
-You can use a **public address** to access an Elasticsearch instance from the Internet. For more information, see [Basic information](../../../../../intl.en-US/User Guide/Instance management/Basic information.md).
+You can use a **public address** to access an Elasticsearch instance from the Internet. For more information, see [Basic information](../../../../reseller.en-US/User Guide/Instance management/Basic information.md).
 
 **Note:** 
 
--   To access an Elasticsearch instance from the Internet, you must first create a [Public IP address whitelist](../../../../../intl.en-US/User Guide/Instance management/安全配置.md#section_ux5_yct_zgb), By default, no public addresses are allowed to access Elasticsearch.
+-   To access an Elasticsearch instance from the Internet, you must first create a [Public IP address whitelist](../../../../reseller.en-US/User Guide/Instance management/Security settings.md#section_ux5_yct_zgb). By default, no public addresses are allowed to access Elasticsearch.
 -   Alibaba Cloud Elasticsearch 6.3.2 with X-Pack does not support `9300` port.
 
 **Access Elasticsearch from an intranet**
 
-You can use a **private address** to access an Elasticsearch instance from an ECS instance in a VPC. For more information, see [Basic information](../../../../../intl.en-US/User Guide/Instance management/Basic information.md).
+You can use a **private address** to access an Elasticsearch instance from an ECS instance in a VPC. For more information, see [Basic information](../../../../reseller.en-US/User Guide/Instance management/Basic information.md).
 
 **Note:** 
 
@@ -23,7 +23,7 @@ You can use a **private address** to access an Elasticsearch instance from an EC
 -   Before you purchase an Elasticsearch instance, make sure that you have created a VPC and VSwitch in the same region as the Elasticsearch instance.
 -   If you choose to access an Elasticsearch instance from an ECS instance, make sure that the Elasticsearch instance and ECS instance are in the same region.
     -   - If your Alibaba Cloud ECS instance is deployed in a VPC, make sure that the ECS instance and your Alibaba Cloud Elasticsearch instance are connected to the same VPC.
-    -   If the network type of your ECS instance is Classic, make sure that the instance meets the requirements as described in **VPC network segments** of [Classic network errors](../../../../../intl.en-US/FAQ/Classic network errors.md).
+    -   If the network type of your ECS instance is Classic, make sure that the instance meets the requirements as described in **VPC network segments** of [Classic network errors](../../../../reseller.en-US/FAQ/Classic network errors.md).
 -   You can only select VSwitches in the same zone, region, and VPC as the Elasticsearch instance.
     -   You must create a VSwitch if no VSwitch is available in the zone and VPC where the Elasticsearch instance resides.
     -   Make sure that the number of VSwitch IP addresses is no less than 256. Otherwise, the system displays a message indicating insufficient private IP addresses.
@@ -36,8 +36,6 @@ You can use a **private address** to access an Elasticsearch instance from an EC
 ## Elasticsearch Subscription {#section_tvt_lmk_zgb .section}
 
 All discounts for Alibaba Cloud Elasticsearch instances are offered based on the subscription duration that you have specified.
-
-You cannot request a refund with no reason in five days. Subscription products on the international site do not support refunds. If you want to terminate your subscription services, make sure that the data backup is complete, and log on to the Alibaba Cloud **console** \> **Billing Management** \> **Renewal** to manually disable the Don't Renew button. You can still use Alibaba Cloud services before the current billing cycle. The Subscription-based fees will not be returned to you. Auto renewal will be terminated in the next billing cycle.
 
 ## Elasticsearch instance types {#section_crb_mmk_zgb .section}
 
@@ -67,5 +65,5 @@ We recommend that you preserve disk space for storing the system logs when selec
     -   .monitoring-kibana-6-2018.01.08. The amount of storage space that the indexes consume increases with the number of the indexes. Elasticsearch creates only one index each day and keeps indexes for seven days after creation.
     -   .watcher-history-3-2018.01.08. The indexes consume only a small amount of storage space. Elasticsearch creates only one index each day and keeps all indexes that have been created. You must manually delete the indexes that you no longer need.
 
-**Note:** When an Elasticsearch instance has a high disk usage, such as a disk usage higher than 80%, the Elasticsearch cluster health status changes to yellow or red, and the Elasticsearch instance cannot be restarted. To restart an Elasticsearch instance, make sure that the health status of the instance is green. For more information, see [Instance management](../../../../../intl.en-US/User Guide/Instance management/Instance management.md).
+**Note:** When an Elasticsearch instance has a high disk usage, such as a disk usage higher than 80%, the Elasticsearch cluster health status changes to yellow or red, and the Elasticsearch instance cannot be restarted. To restart an Elasticsearch instance, make sure that the health status of the instance is green. For more information, see [Instance management](../../../../reseller.en-US/User Guide/Instance management/Instance management.md).
 
