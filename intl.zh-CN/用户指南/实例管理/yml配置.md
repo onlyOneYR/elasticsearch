@@ -152,7 +152,7 @@ xpack.security.audit.index.settings.index.number_of_shards: 10
 
 修改生效后， accesslog将输出到阿里云ES实例中以`.security_audit_log-*`开头的索引名称中供您查看。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155615883440144_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155617695140144_zh-CN.png)
 
  **审计日志索引配置详析** 
 

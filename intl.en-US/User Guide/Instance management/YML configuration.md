@@ -4,7 +4,7 @@
 
 For more configurations, visit the Elasticsearch official website and view the [HTTP](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/modules-http.html) information.
 
-**Configuration information**
+ **Configuration information** 
 
 -   Configurations in the table below are custom HTTP-based configurations provided by Alibaba Cloud Elasticsearch.
 -   For the following configurations, only **static configuration** is supported. Dynamic configuration is not supported. Note that for the following configurations to take effect, you must add the configurations to the `elasticsearch.yml` file.
@@ -13,11 +13,19 @@ For more configurations, visit the Elasticsearch official website and view the [
 |Configuration item|Description|
 |------------------|-----------|
 |`http.cors.enabled`|A CORS \(Cross-Origin Resource Sharing\) configuration item, which can be used to **enable** or **disable** CORS resource accesses. In other words, this setting is used to determine whether to allow Elasticsearch to receive requests sent by browsers to access resources in different domains. If the parameter is set to `true`, Elasticsearch can process `OPTIONS` CORS requests. If the domain information in the sent request is already declared in `http.cors.allow-origin`, Elasticsearch adds `Access-Control-Allow-Origin` in the header to respond to the CORS request. If the parameter is set to `false` \(which is the default value\), Elasticsearch ignores the domain information in the request header, not adding the `Access-Control-Allow-Origin` to the header, disabling CORS access. If the client neither supports `pre-flight` requests that add the domain information header, nor checks `Access-Control-Allow-Origin` in the header of the packet returned from the server, then the secured CORS access will be affected. If Elasticsearch disables CORS access, then the client can only check whether a response is returned by sending the `OPTIONS` request.|
-|`http.cors.allow-origin`|A CORS resource configuration item, which can be used to specify requests from which domains are accepted. The parameter is left blank, by default, with no domain is allowed. If `/` is added before the parameter value, then the configuration is identified as a regular expression, which means that `HTTP` and `HTTPS` domain requests that follow the regular expression are supported. For example `/Https? : \/Localhost (: [0-9] + )? /` means requests follow the regular expression can be responded to. `*` means that a configuration is valid and can be identified as enabling the cluster to support CORS requests from any **domain**, resulting in **security risks** to the Elasticsearch cluster.|
+|`http.cors.allow-origin`|A CORS resource configuration item, which can be used to specify requests from which domains are accepted. The parameter is left blank, by default, with no domain is allowed. If `/` is added before the parameter value, then the configuration is identified as a regular expression, which means that `HTTP` and `HTTPS` domain requests that follow the regular expression are supported. For example`/Https? : \/Localhost (: [0-9] + )? /` means requests follow the regular expression can be responded to. `*` means that a configuration is valid and can be identified as enabling the cluster to support CORS requests from any **domain**, resulting in **security risks** to the Elasticsearch cluster.|
 |`http.cors.max-age`|The browser can send an `OPTIONS` request to get the CORS configuration. `max-age` can be used to set how long the browser can retain the output result cache. The default value is `1728000` seconds \(20 days\).|
 |`http.cors.allow-methods`|A request method configuration item. The optional values are `OPTIONS`, `HEAD`, `GET`, `POST`, `PUT`, and `DELETE`.|
 |`http.cors.allow-headers`|A request header configuration item. The default value is `X-Requested-With, Content-Type, Content-Length`.|
 |`http.cors.allow-credentials`|A credential configuration item, which is used to specify whether to return `Access-Control-Allow-Credentials` in the response header. If the parameter is set to `true`, Access-Control-Allow-Credentials is returned. The default value is `false`.|
+
+An example of custom cross-origin access configuration is as follows:
+
+``` {#codeblock_x4o_ncc_gvj}
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.cors.allow-headers: "X-Requested-With, Content-Type, Content-Length, Authorization"
+```
 
 ## Customize remote re-indexing \(whitelist\) {#section_qrw_4xs_zgb .section}
 
@@ -40,7 +48,7 @@ POST _ reindex
     }
   },
   "dest": {
-    "index": "dest"
+    "index": "test-1",
   }
 }
 ```
@@ -65,7 +73,7 @@ otherhost: 9200, another: 9200,127.0 .10. **: 9200,
 
 -   Indexing data from a remote cluster is not supported**Manual Slicing**Or**Automatic Slicing**. For more information, see [Manual slicing](https://github.com/elastic/elasticsearch/blob/5.6/docs/reference/docs/reindex.asciidoc#docs-reindex-manual-slice) or [Automatic slicing](https://github.com/elastic/elasticsearch/blob/5.6/docs/reference/docs/reindex.asciidoc#docs-reindex-automatic-slice).
 
-**Multiple indexes settings**
+ **Multiple indexes settings** 
 
 The remote service uses a stack to cache indexed data. The default maximum size is `100 MB`. If the remote index contains a large document, set the size of batch settings to a small value.
 
@@ -87,12 +95,12 @@ POST _ reindex
     }
   },
   "dest": {
-    "index": "dest"
+    "index": "test-1",
   }
 }
 ```
 
-**Timeout period**
+ **Timeout period** 
 
 -   Use `socket_timeout` to set the read timeout period of `socket`. The default value is `30s`.
 -   Use `connect_timeout` to set the connection timeout period. The default value is `1s`.
@@ -123,7 +131,7 @@ POST _ reindex
 
 ## Customize the access log {#section_xqc_pxs_zgb .section}
 
-**Enable auditing**
+ **Enable auditing** 
 
 The index auditing configuration is as follows.
 
@@ -138,15 +146,15 @@ xpack.security.audit.index.settings.index.number_of_replicas: 1
 xpack.security.audit.index.settings.index.number_of_shards: 10
 ```
 
-**Index auditing output**
+ **Index auditing output** 
 
 Alibaba Cloud Elasticsearch instances do not support displaying request-related log files. Therefore, to view information about the Elasticsearch instance requests, such as the access\_log, you must log in to the Elasticsearch console and enable the access log index function.
 
 After this function is enabled, the access log is output to indexes on the Elasticsearch instance. The name of indexes starts with `.security_audit_log-*`.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155357105040144_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155617695440144_en-US.png)
 
-**Audit log indexing configuration**
+ **Audit log indexing configuration** 
 
 **Note:** 
 
@@ -155,16 +163,16 @@ After this function is enabled, the access log is output to indexes on the Elast
 -   Audit log indexing occupies Alibaba Cloud Elasticsearch instance storage space. You must manually clear old audit log indexes because no policy is available for clearing expired indexes.
 
 
-|Feature|Default value|Description|
-|-------|-------------|-----------|
+|Feature|Default value|\[DO NOT TRANSLATE\]|
+|-------|-------------|--------------------|
 |`xpack.security.audit.index.bulk_size`|`1,000`|Indicates how many audit events are batched into a single write file.|
 |`xpack.security.audit.index.flush_interval`|`1 s`|Indicates how often buffered events are flushed to the index.|
 |`xpack.security.audit.index.rollover`|`daily`|Indicates how often to roll over to a new index. Options include `hourly`, `daily`, `weekly`, or `monthly`.|
-|`Xpack. security. audit. index. events. include`|`anonymous_access_denied`, `authentication_failed`, `realm_authentication_failed`, `access_granted`, `access_denied`, `tampered_request`, `connection_granted`, `connection_denied`, `run_as_granted`, `run_as_denied`|Specifies the audit events to be indexed. For more information about audit event types, see [Audit event types](https://www.elastic.co/guide/en/x-pack/5.5/auditing.html#audit-event-types).|
+|`Xpack. security. audit. index. events. include`|`anonymous_access_denied`， `authentication_failed`， `realm_authentication_failed`，`access_granted`，`access_denied`，`tampered_request`，`connection_granted`，`connection_denied`，`run_as_granted`，`run_as_denied`|Specifies the audit events to be indexed. For more information about audit event types, see [Audit event types](https://www.elastic.co/guide/en/x-pack/5.5/auditing.html#audit-event-types).|
 |`xpack. security. audit. index. events. exclude`| |Excludes the specified auditing events from indexing.|
 |`xpack. security. audit. index. events. emit_request_body`|`false`|Indicates whether to include the request body in REST requests in certain event types, such as `authentication_failed`.|
 
-**Audit indexing settings**
+ **Audit indexing settings** 
 
 The configuration item `xpack.security.audit.index.settings` in the `elasticsearch.yml` file specifies the settings for the indexes in which the events are stored.
 
@@ -177,15 +185,15 @@ xpack. security. audit. index. settings:
     number_of_replicas: 1
 ```
 
-**Note:** You can pass custom settings to xpack.security.audit.index.settings when enabling audit indexing. Once you apply the change to the Elasticsearch instance, audit indexes will be available on the Elasticsearch instance. Otherwise, the elasticsearch instance audit log is set to the default `Number_of_shards: 5`, and `Number_of_replicas: 1`.
+**Note:** You can pass custom settings to xpack.security.audit.index.settings when enabling audit indexing. Once you apply the change to the Elasticsearch instance, audit indexes will be available on the Elasticsearch instance. Otherwise, the elasticsearch instance audit log is set to the default`Number_of_shards: 5`, and `Number_of_replicas: 1`.
 
-**Remote audit log indexing settings**
+ **Remote audit log indexing settings** 
 
 Indexing settings for remote audit logs are currently unavailable.
 
 ## Customize thread pool queue size {#section_km3_pxs_zgb .section}
 
-You can set `Thread_pool.bulk.queue_size`, `Thread_pool.write.queue_size`, and `Thread_pool.search.queue_size` to customize the queue size of the write and search thread pools, respectively.
+You can set `Thread_pool.bulk.queue_size`,`Thread_pool.write.queue_size`, and`Thread_pool.search.queue_size` to customize the queue size of the write and search thread pools, respectively..
 
 In the following example, both the write and search queue size are set to `500`.
 
@@ -203,7 +211,7 @@ thread_pool.search.queue_size: 500
 |------------------|-----------|
 |Index. codec|The ES data compression algorithm defaults to LZ4. Usually, by setting LZ4 to best\_compression in a warm or cold cluster using a high-speed cloud disk, a higher compression ratio DEFLATE algorithm can be used. After the algorithm is changed, segment merges will use the newest version of the algorithm. **Note that using best\_compression will result in reduced write performance**.|
 
-**REST API settings**
+ **REST API settings** 
 
 You can set the `index.codec` parameter by using REST API.
 
