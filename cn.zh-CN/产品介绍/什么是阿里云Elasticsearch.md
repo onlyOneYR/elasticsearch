@@ -1,19 +1,10 @@
-# 什么是阿里云Elasticsearch {#test .concept}
+# 产品概述 {#test .concept}
 
-Elasticsearch简称ES，是一个基于Lucene的实时分布式的搜索与分析引擎，是遵从Apache开源条款的一款开源产品，是当前主流的企业级搜索引擎。它提供了一个分布式服务，可以使您快速的近乎于准实时的存储、查询和分析超大数据集，通常被用来当做构建复杂查询特性和需求强大应用的基础引擎或技术。
+Elasticsearch是一个基于Lucene的搜索和数据分析工具，它提供了一个分布式服务。Elasticsearch是遵从Apache开源条款的一款开源产品，是当前主流的企业级搜索引擎。
 
-阿里云Elasticsearch提供Elasticsearch 5.5.3 with Commercial Feature、6.3.2 with Commercial Feature、6.7.0 with Commercial Feature及商业插件X-pack服务，致力于数据分析、数据搜索等场景服务。在开源Elasticsearch的基础上提供企业级权限管控、安全监控告警、自动报表生成等功能。
+阿里云Elasticsearch提供Elasticsearch 5.5.3 with Commercial Feature、6.3.2 with Commercial Feature、6.7.0 with Commercial Feature及商业插件X-pack服务，致力于数据分析、数据搜索等场景服务。在开源Elasticsearch基础上提供企业级权限管控、安全监控告警、自动报表生成等功能。
 
 X-Pack是Elasticsearch的一个商业版扩展包，将安全，警告，监视，图形和报告功能捆绑在一个易于安装的软件包中。X-Pack被集成在Kibana中，为用户提供授权认证、角色权限管控、实时监控、可视化报表、机器学习等能力。
-
-## 使用场景 {#section_ph2_h0k_nqt .section}
-
-阿里云Elasticsearch可以被用在如下几个场景中：
-
--   当您运营一个提供客户检索商品的在线电子商城的时候，可以使用ES来存储整个商品的目录和库存，并且为客户提供检索和自动推荐功能。
--   收集交易数据，存储数据并做趋势、统计、概要或异常分析。这种情况下，可以使用Logstash来收集、聚合和解析数据，并且存储到Elasticsearch。一旦数据进入Elasticsearch，您可以通过检索、聚合来掌握您感兴趣的信息。
--   价格预警平台，为价格敏感客户提供匹配其需求（主要是价格方面）的商品。
--   在报表分析/BI领域，可以使用ES的聚合功能完成针对大数据量的复杂分析。
 
 ## 特点及优势 {#section_znf_rbf_zgb .section}
 
