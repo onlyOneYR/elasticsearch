@@ -29,7 +29,7 @@ You can use REST clients to access Elasticsearch clusters through HTTP or TCP. W
 
 ## Use Java APIs to communicate with clusters {#section_pys_vjf_zgb .section}
 
-Elasticsearch provides a default client for Java users. For more information, see [Java API](http://www.elasticsearch.org/guide/).
+Elasticsearch provides a default client for Java users. For more information, see [Java API](https://www.elastic.co/guide/en/elasticsearch/client/java-api/5.5/index.html?spm=a2c63.p38356.a3.13.3dec30dfVJEiET).
 
 **Transport client**
 
