@@ -2,11 +2,11 @@
 
 ## Auto snapshots {#section_o4j_j3k_zgb .section}
 
-Alibaba Cloud Elasticsearch support creating auto snapshots. You can enable this feature on the **Snapshots** page in the console. You can adjust the time when the daily snapshot is automatically created based on your business needs. This feature allows you to back up your data for disaster recovery. For more information, see [Security settings](../../../../../reseller.en-US/User Guide/Instance management/Security settings.md).
+Alibaba Cloud Elasticsearch support creating auto snapshots. You can enable this feature on the **Snapshots** page in the console. You can adjust the time when the daily snapshot is automatically created based on your business needs. This feature allows you to back up your data for disaster recovery. For more information, see [Snapshots](../../../../reseller.en-US/User Guide/Instance management/Data backup/Snapshots.md#).
 
-**Restore snapshots**
+ **Restore snapshots** 
 
-To restore a snapshot, log on to the Alibaba Cloud Elasticsearch console and click View Tutorial on the **Snapshots** page. You will be redirected to [Automatic backup guide](../../../../../reseller.en-US/User Guide/Instance management/Data backup/Automatic backup guide.md). The topic describes how to restore a snapshot.
+To restore a snapshot, log on to the Alibaba Cloud Elasticsearch console and click View Tutorial on the **Snapshots** page. You will be redirected to [Auto snapshot guide](../../../../reseller.en-US/User Guide/Instance management/Data backup/Auto snapshot guide.md). The topic describes how to restore a snapshot.
 
 **Note:** 
 
@@ -17,7 +17,7 @@ To restore a snapshot, log on to the Alibaba Cloud Elasticsearch console and cli
 
 Alibaba Cloud Elasticsearch instance snapshots can be stored in Object Storage Service \(OSS\). You must create an OSS instance in the same region that the Alibaba Cloud Elasticsearch instance is created. Perform the steps described in **Snapshot and recovery** to run the command to create snapshots and create snapshots on the specified indexes.
 
-You can also run the restore command to restore indexes in a specified snapshot that has been created before. This method allows you to back up your data for disaster recovery. For more information, see [Snapshot and recovery](../../../../../reseller.en-US/User Guide/Snapshot and recovery.md).
+You can also run the restore command to restore indexes in a specified snapshot that has been created before. This method allows you to back up your data for disaster recovery. For more information, see [Snapshot and recovery](../../../../reseller.en-US/User Guide/Snapshot and recovery.md).
 
 **Note:** 
 
