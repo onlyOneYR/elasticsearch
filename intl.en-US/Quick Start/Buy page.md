@@ -4,7 +4,7 @@
 
 **Subscription** 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155920587339941_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155955442339941_en-US.png)
 
 -   If the auto renewal function is disabled, you must log on to the Elasticsearch console and manually renew the overdue instances. For more information, see [Overdue payments](../../../../reseller.en-US/Product Introduction/Overdue payments.md).
 -   Elasticsearch instances cannot be manually released in the console.
@@ -14,7 +14,7 @@
 
 **Note:** We recommend that you purchase **Pay-As-You-Go** Elasticsearch instances for testing purposes at the development and testing stages.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155920587339942_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155955442339942_en-US.png)
 
 -   Auto renewal is supported. For more information, see [Overdue payments](../../../../reseller.en-US/Product Introduction/Overdue payments.md).
 -   You can click **More** and then select Release to manually release an Elasticsearch instance.
@@ -23,8 +23,8 @@
 
 Alibaba Cloud Elasticsearch supports the following regions:[Regions and zones](../../../../reseller.en-US/General Reference/Regions and zones.md#)
 
--   China \(Hangzhou\): Zone B, Zone F, Zone G, Zone H, and Zone I.
--   China \(Beijing\): Zone E.
+-   China \(Hangzhou\): Zone B, Zone F, Zone G, Zone H, Zone I, and Zone E.
+-   China \(Beijing\): Zone E, Zone A, Zone C, and Zone D.
 -   China \(Shanghai\): Zone B and Zone D.
 -   China \(Shenzhen\): Zone C.
 -   India \(Mumbai\): Zone A.
@@ -40,9 +40,9 @@ Alibaba Cloud Elasticsearch supports the following regions:[Regions and zones](.
 
 ## Instances {#section_rry_m4l_zgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155920587339948_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155955442339948_en-US.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155920587339950_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155955442339950_en-US.png)
 
  **Version** 
 
@@ -241,7 +241,7 @@ Alibaba Cloud Elasticsearch warm nodes support the following specifications. For
 
 ## Storage {#section_bbk_n4l_zgb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155920587339957_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155955442339957_en-US.png)
 
  **Storage types** 
 
@@ -270,7 +270,7 @@ Each ultra disk can provide up to 5 TB of storage space. Ultra disks are cost-ef
 
 When purchasing an Alibaba Cloud Elasticsearch instance, you must set the password for the \`elastic\` account. The password cannot be empty.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155920587339958_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155955442339958_en-US.png)
 
  **Username** 
 
@@ -286,7 +286,7 @@ Set a password for the `elastic` account according to the password rules.
 
 You can slide to select a subscription duration to meet your business needs. Supported subscription duration: from 1 to 9 months and from 1 to 3 years.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155920587339959_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/155955442339959_en-US.png)
 
  **Subscription duration** 
 
