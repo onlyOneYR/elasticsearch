@@ -12,7 +12,7 @@ The following two general permission policies are provided to meet the needs for
 
 ## Permission to buy instances \(post-payment & prepayment\) {#section_kt1_qhy_zgb .section}
 
-**Permission to access the VPC of the primary account**
+ **Permission to access the VPC of the primary account** 
 
 -   \[“vpc:DescribeVSwitch\*”,“vpc:DescribeVpc\*”\]
 
@@ -39,10 +39,10 @@ The following two general permission policies are provided to meet the needs for
 
 ## Authorization examples {#section_wrq_m3y_zgb .section}
 
--   [授权资源类型](intl.en-US/User Guide/RAM/授权资源类型.md#) \(for example, $regionid, $accountid, and $instanceId\).
+-   [Authorized resources](reseller.en-US/User Guide/RAM/Authorized resources.md#) \(for example, $regionid, $accountid, and $instanceId\).
 -   Elasticsearch instances in the resource can be indicated by the wildcard `*`.
 
-**Authorization example 1**
+ **Authorization example 1** 
 
 To a subaccount under the primary account \(accountId “1234”\), assign all operation permissions, except for CreateInstance, over all instances in China East 1 \(Hangzhou\) on the console, and set the instances to be accessible from only the specified IP address.
 
@@ -50,7 +50,7 @@ After this policy is created on the console of the primary account, you need to 
 
 1.  Create a policy
 
-    ```
+    ``` {#codeblock_0m8_j1c_lmh}
     {
       "Statement ":[
         {
@@ -76,7 +76,7 @@ After this policy is created on the console of the primary account, you need to 
 
 2.  Authorize the current policy to your specified subaccount.
 
-**Authorization example 2**
+ **Authorization example 2** 
 
 For a subaccount under the primary account \(accountId “1234”\), assign all operation permissions, except for CreateInstance, over the specified instances in China East 1 \(Hangzhou\) on the console, and set the instances to be accessible from only the specified IP address.
 
@@ -84,7 +84,7 @@ After this policy is created on the console of the primary account, you should a
 
 1.  Create a policy
 
-    ```
+    ``` {#codeblock_6jj_csj_it7}
     {
       "Statement ":[
         {
@@ -121,7 +121,7 @@ After this policy is created on the console of the primary account, you should a
 
 2.  Authorize the current policy to your specified subaccount.
 
-**Authorization example 3**
+ **Authorization example 3** 
 
 To a subaccount under the primary account \(accountId “1234”\), assign all operation permissions over all instances in all regions supported by Alibaba Cloud Elasticsearch on the console.
 
@@ -129,7 +129,7 @@ After this policy is created on the console of the primary account, you should a
 
 1.  Create a policy
 
-    ```
+    ``` {#codeblock_mi3_wou_69n}
     {
       "Statement ":[
         {
@@ -146,7 +146,7 @@ After this policy is created on the console of the primary account, you should a
 
 2.  Authorize the current policy to your specified subaccount.
 
-**Authorization example 4**
+ **Authorization example 4** 
 
 To a subaccount under the primary account \(accountId “1234”\), assign all operation permissions, except for CreateInstance and ListInstance, over specified instances in all regions supported by Alibaba Cloud Elasticsearch on the console.
 
@@ -154,7 +154,7 @@ After this policy is created on the console of the primary account, you should a
 
 1.  Create a policy
 
-    ```
+    ``` {#codeblock_219_xk3_mk7}
     {
       "Statement ":[
         {
