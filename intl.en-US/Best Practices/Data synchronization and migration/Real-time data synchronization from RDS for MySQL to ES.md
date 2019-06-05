@@ -60,7 +60,7 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
     -   Specification
 
-        Each instance specification corresponds to the performance of a synchronization instance. For more information, see [Data Synchronization Specification](https://partners-intl.aliyun.com/help/doc-detail/26605.htm).
+        Each instance specification corresponds to the performance of a synchronization instance. For more information, see [Data synchronization specification](https://partners-intl.aliyun.com/help/doc-detail/26605.htm).
 
     -   Order Time
         -   If the synchronization instance is prepaid, the order time is one month by default.
@@ -72,7 +72,7 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
 2.  Configure your synchronization instance
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155969981240099_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155970020240099_en-US.png)
 
     **Synchronization task name**
 
@@ -82,13 +82,13 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
     This example uses RDS for MySQL as the data source. You need to set the instance type, region and ID, and database account and password.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155969981240100_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155970020240100_en-US.png)
 
      **Target instance** 
 
     You need to configure the ID, account, and password for the ES instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155969981240101_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155970020240101_en-US.png)
 
     Once you complete these configurations, click **Authorize Whitelist and Enter Next Step** to add IPs to RDS for MySQL and ES instance whitelists.
 
@@ -113,11 +113,11 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
         The selectable granularity of the synchronization objects supports table-level operations. This means that you can synchronize several databases and tables.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155969981240102_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155970020240102_en-US.png)
 
     3.  By default, the docid of all tables is the primary key. If some tables do not have the primary key, configure their docid corresponding to the columns in the source tables. In the box of selected objects on the right, move the pointer over the corresponding table, and click **Edit** to enter the advanced settings pane.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155969981240103_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155970020240103_en-US.png)
 
     4.  In advanced settings, you can configure the index name, type name, partition column and quantity, and \_id value column. If the value of \_id is set to the business primary key, you need to select the corresponding business primary key column.
 
@@ -133,7 +133,7 @@ To synchronize data from an RDS for MySQL instance to an ES instance, complete t
 
     3.  **String Index** is an analyzer that can select strings. By default, it is **Standard Analyzer**. Other values include: **Simple Analyzer**, **Whitespace Analyzer**, **Stop Analyzer**, **Keyword Analyzer**, **English Analyzer**, and **Fingerprint Analyzer**. The string fields of all indexes define Analyzer according to this configuration.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155969981240104_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134314/155970020240104_en-US.png)
 
     4.  **Time Zone** is where time fields synchronized to your ES instance are stored. The default time zone in China is UTC \(UTC +8\).
 
