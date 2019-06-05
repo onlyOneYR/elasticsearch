@@ -14,6 +14,7 @@ The Smart O&M system supports the following regions:
 
 -   China \(Hangzhou\)
 -   China \(Shanghai\)
+-   China North 1 \(Qingdao\)
 -   China \(Beijing\)
 -   China \(Shenzhen\)
 
