@@ -9,18 +9,18 @@ On the source instances page, you can create and manage source instances.
 3.  On the source instances page, click **Create**.
 4.  Select a source instance type, such as MySQL, and then click **Next**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/150822/155618553742067_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/150822/155618555042067_en-US.png)
 
 5.  On the create source instance page, set parameters and click **OK**. The system will create the source instance after the configuration is validated.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/150822/155618553742068_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/150822/155618555042068_en-US.png)
 
 
 ## Manage source instances {#section_w2j_ps2_ghb .section}
 
 After creating a source instance, you can perform the following actions on the source instances page:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/150822/155618553742066_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/150822/155618555242066_en-US.png)
 
 -   Enter a source instance ID or name into the search box to search for the source instance.
 -   Create source instances.
