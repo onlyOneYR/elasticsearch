@@ -139,7 +139,7 @@ POST _reindex
 
 阿里云Elasticsearch实例不支持查看存盘请求的相关log文件，因此如果您想了解阿里云Elasticsearch实例请求的相关信息（例如access\_log），那么需要在控制台中开启阿里云Elasticsearch实例对应的Accesslog索引功能。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/156084689840144_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/156085268440144_zh-CN.png)
 
 修改生效后，Accesslog将输出到阿里云Elasticsearch实例中，并且使用`.security_audit_log-*`开头的索引名称。
 
