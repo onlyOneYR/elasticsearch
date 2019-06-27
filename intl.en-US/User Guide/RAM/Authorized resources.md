@@ -85,7 +85,7 @@ The following table lists the supported resource types and the corresponding Ali
 |elasticsearch:DescribeDiagnosisSettings|You can perform this action to query the health diagnosis settings.|`instances/*` or `instances/$instanceId`|
 |elasticsearch:ListInstanceIndices|You can perform this action to query instance indexes.|`instances/*` or `instances/$instanceId`|
 |elasticsearch:DiagnoseInstance|You can perform this action to start health diagnosis.|`instances/*` or `instances/$instanceId`|
-|elasticsearch:ListDiagnoseReportIds|You can perform this action to query diagnosis report IDs.|`instances/*` 或 `instances/$instanceId`|
+|elasticsearch:ListDiagnoseReportIds|You can perform this action to query diagnosis report IDs.|`instances/*` or `instances/$instanceId`|
 |elasticsearch:DescribeDiagnoseReport|You can perform this action to view diagnosis report details.|`instances/*` or `instances/$instanceId`|
 |elasticsearch:ListDiagnoseReport|You can perform this action to list diagnosis reports.|`instances/*` or `instances/$instanceId`|
 
@@ -94,9 +94,9 @@ The following table lists the supported resource types and the corresponding Ali
 |Elasticsearch region|RegionId|
 |--------------------|--------|
 |China \(Hangzhou|cn-hangzhou-d|
-|China \(Beijing\)|cn-beijing |
-|China \(Shanghai\)|cn-shanghai |
-|China \(Shenzhen|cn-shenzhen |
+|China \(Beijing\)|cn-beijing|
+|China \(Shanghai\)|cn-shanghai|
+|China \(Shenzhen|cn-shenzhen|
 |India \(Mumbai\)|ap-south-1|
 |Singapore|ap-southeast-1|
 |cn-hongkong|cn-hongkong|
