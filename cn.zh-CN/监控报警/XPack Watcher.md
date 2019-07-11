@@ -2,6 +2,8 @@
 
 本文档为您介绍XPack Watcher的配置方法。您可以通过添加XPack Watcher实现当满足某些条件时执行某些操作，比如当`logs`索引中出现`error`日志时，自动发送报警邮件或钉钉消息。可以简单的理解为Watcher是一个基于Elasticsearch实现的监控报警服务。
 
+**说明：** XPack Watcher功能主要适用于单可用区的阿里云Elasticsearch实例，不支持跨多可用区的阿里云Elasticsearch实例。
+
 ## 功能介绍 {#section_ez5_pcm_zgb .section}
 
 XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
@@ -29,7 +31,7 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
 
 以配置Webhook Action为例（Webhook采用钉钉群机器人）。
 
-1.  [购买阿里云ECS实例](../../../../cn.zh-CN/个人版快速入门/步骤 2：创建ECS实例.md#)。
+1.  [购买阿里云ECS实例](../../../../cn.zh-CN/个人版快速入门/创建ECS实例.md#)。
 
     购买的ECS要与阿里云Elasticsearch实例在同一个区域和VPC下，并且需要能够访问公网。
 
@@ -43,7 +45,7 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
     3.  在**安全组规则**页面，单击**添加安全组规则**。
     4.  填写相关参数，单击**确定**，即可完成配置。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156111290449922_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156283887649922_zh-CN.png)
 
         -   **规则方向**选择**入方向**。
         -   **授权策略**为默认的**允许**。
@@ -176,7 +178,7 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
 
     **说明：** 开启Watcher操作会触发集群重启，为保证您的业务不受影响，请确认后操作。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156111290449905_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156283887649905_zh-CN.png)
 
 4.  勾选**该操作会重启实例，请确认后操作**，然后单击**确认**。
 
