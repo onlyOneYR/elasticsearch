@@ -1,107 +1,84 @@
 # Cluster upgrade {#concept_kks_qzl_zgb .concept}
 
-This function allows you to upgrade the **instance specification**, **number of nodes**, **dedicated master node specification**, **number of client nodes**, **client node specification**, **number of warm nodes**, **warm node specification**, **warm node storage space**, and **storage space per data node**.
+This topic describes the procedure, guidelines, and restrictions of upgrading an Alibaba Cloud Elasticsearch instance.
 
-**Note:** You may not be able to upgrade some of the cluster properties due to certain restrictions. For more information, see the following sections.
+Alibaba Cloud Elasticsearch allows you to upgrade the **instance specification**, **number of nodes**, **dedicated master node specification**, **number of client nodes**, **client node specification**, **number of warm nodes**, **warm node specification**, **warm node storage space**, and **storage space per data node** of an Elasticsearch instance.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/155833115040023_en-US.png)
+**Note:** You may not be able to upgrade some of the cluster properties due to certain restrictions. For more information, see [Configuration upgrade](#section_h5j_mgm_zgb).
+
+Log on to the [Alibaba Cloud Elasticsearch console](https://elasticsearch.console.aliyun.com/), select **Instance ID** \> **Basic Information**, and then click Upgrade to navigate to the Update page.
+
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/156395376640023_en-US.png)
+
+The Update page includes the **Current Config** and **Configuration Upgrade** information. For more information, see [Current configuration](#section_mkc_mgm_zgb) and [Configuration upgrade](#section_h5j_mgm_zgb).
 
 ## Current configuration {#section_mkc_mgm_zgb .section}
 
-Click **Upgrade** to view the configuration of the current Alibaba Cloud Elasticsearch instance.
+The **Current Config** section shows the configuration of the current Alibaba Cloud Elasticsearch instance. You can reference the information when you upgrade the instance.
 
-## Change configuration {#section_h5j_mgm_zgb .section}
+## Precautions {#section_ksh_d6x_563 .section}
 
-You can follow the tips on the Configuration Upgrade page to upgrade the configuration of a cluster based on your business needs. For more information about the parameters, see [Buy page](../../../../reseller.en-US/Quick Start/Buy page.md).
+Before you upgrade an Elasticsearch instance, pay close attention to the following precautions:
 
-**Note:** 
+-   If you need to upgrade the instance due to business requirements, make an assessment before you upgrade the cluster.
+-   For each upgrade operation, you can only change one of the [upgradable cluster properties](#).
+-   Typically, Elasticsearch needs to restart your Elasticsearch instance for the upgrade to take effect. For an Elasticsearch instance with dedicated master nodes, if you change the **number of nodes**, the instance will not be restarted.
+-   If the status of your Elasticsearch instance is unhealthy \(showing a yellow or red flag\), then you must select **Force Update** to upgrade the instance. Force update may affect your businesses.
+-   You cannot change the disk type of nodes by upgrading the instance. You can only change the storage space per node.
+-   Alibaba Cloud Elasticsearch allows you to upgrade the specification of the Kibana node. Fees are charged for upgrading the Kibana node.
+-   Alibaba Cloud Elasticsearch subscription instances currently do not support downgrading. For example, you cannot remove nodes from clusters, scale in the disk space, or downgrade the node specifications.
+-   You can downgrade Alibaba Cloud Elasticsearch pay-as-you-go instances by scaling in the number of data nodes. The number of data nodes that you can scale in is restricted. Currently, you cannot perform other downgrade operations. For example, you cannot scale in the disk space or downgrade the node specification.
+-   After you change the configuration of the instance, you can check the amount of your order on the Update page.
+-   After you submit the order, your Elasticsearch instance will be billed based on the new configuration.
 
--   For each upgrade, you can change only one of the cluster properties mentioned at the beginning of this topic.
--   You cannot change the storage type on the Configuration Upgrade page. You can only expand the storage space.
--   The cluster upgrade operation restarts the corresponding Alibaba Cloud Elasticsearch instance.
--   Subscription-based Alibaba Cloud Elasticsearch instances currently do not support downgrade. For example, you cannot remove nodes from clusters, scale in the disk space, or downgrade the node specifications.
--   You can only downgrade a Pay-As-You-Go Alibaba Cloud Elasticsearch instance by removing data nodes from the instance. The number of data nodes that you can remove is restricted. Currently, you cannot perform other downgrade operations. For example, you cannot downgrade the disk space or node specification.
+## Configuration upgrade {#section_h5j_mgm_zgb .section}
 
-**Note:** 
+**Note:** Before you upgrade the configuration of an Elasticsearch instance, make sure that you have read the precautions in [Precautions](#section_ksh_d6x_563).
 
--   If you have already purchased a dedicated master, changing the number of nodes does not restart the corresponding Alibaba Cloud Elasticsearch instance.
--   To upgrade an Elasticsearch instance when the health status of the instance is not green, you must select **Ignore the health status of the cluster and forcibly update the configuration of the cluster**. However, this may affect your businesses running on the Elasticsearch instance.
--   If your business requires a cluster upgrade, we recommend that you make an upgrade assessment before upgrading the cluster.
--   You can view the total cost of your cluster upgrade order on the Configuration Upgrade page in real time when changing the number of nodes.
--   After you have submitted a cluster upgrade order, the upgrade Elasticsearch instance is billed based on the new configuration.
+You can follow the instructions on the configuration upgrade page to change the configuration of the instance to meet your business requirements. For more information about the parameters, see [Buy page parameters](../../../../reseller.en-US/Quick Start/Buy page parameters.md#).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/155833115040025_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/156395376740025_en-US.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/155833115040026_en-US.png)
+Some of the parameters are described as follows:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/155833115040027_en-US.png)
+-   **Specification family** and **instance type** 
 
-![]()
+    The **Specification Family** cannot be changed. If the **Specification Family** is set to a local disk type, then the **Instance Type** cannot be changed.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/155833115040029_en-US.png)
+-   **Dedicated master nodes** 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/155833115040031_en-US.png)
+    On the Update page, click **Yes** on the right side of **Dedicated Master Node** to purchase dedicated master nodes. You can upgrade the specification of the purchased dedicated master nodes. By default, three dedicated master nodes are purchased. Each dedicated master node has 2 cores, 8 GB of memory, and a cloud disk of 20 GiB. After you upgrade the dedicated master nodes, the Elasticsearch instance will be billed based on the new configuration.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134290/155833115040032_en-US.png)
+    **Note:** If you have purchased **1-core 2 GB** dedicated master nodes, then you can repurchase dedicated master nodes of higher specifications on the Update page. The Elasticsearch instance will be billed based on the new configuration. If your dedicated master nodes are free nodes provided by Elasticsearch, then after you upgrade these nodes, we will start charging these nodes.
 
- **Instance types and specifications** 
+-   **Client nodes** 
 
-Follow the tips on the page to modify the instance type and specifications. For more information, see [Buy page](../../../../reseller.en-US/Quick Start/Buy page.md).
+    On the Update page, click **Yes** on the right side of **Client Node** to purchase client nodes. You can upgrade the specification of the purchased client nodes. By default, two client nodes are purchased. Each client node has 2 cores, 8 GB of memory, and a cloud disk of 20 GiB. After you upgrade the client nodes, the Elasticsearch instance will be billed based on the new configuration.
 
-**Note:** 
+-   **Warm nodes** 
 
--   If a data node belongs to the local disk specification family, then its specification cannot be upgraded.
--   You cannot modify the specification families.
+    On the Update page, click **Yes** on the right side of **Warm Node** to purchase warm nodes. You can upgrade the specification of the purchased warm nodes. By default, two warm nodes are purchased. Each warm node has 2 cores, 8 GB of memory, and a cloud disk of 500 GiB. After you upgrade the warm nodes, the Elasticsearch instance will be billed based on the new configuration.
 
- **Number of nodes** 
+-   **Kibana node** 
 
-Follow the tips on the page to change the number of data nodes that you want to purchase. For more information, see [Buy page](../../../../reseller.en-US/Quick Start/Buy page.md).
+    On the Update page, click **Yes** on the right side of **Kibana Node** to purchase a Kibana node. You can upgrade the specification of the purchased Kibana node. By default, the Kibana node has two cores and 4 GB of memory.
 
- **Dedicated master nodes** 
+    **Note:** After you purchase an Alibaba Cloud Elasticsearch instance, Elasticsearch provides you a free Kibana node with 1 core and 2 GB of memory. After you upgrade the Kibana node, the Elasticsearch instance will be billed based on the new configuration.
 
-You can select the **Dedicated Master Node** option on the Configuration Upgrade page to purchase dedicated master nodes or upgrade the specification of your purchased dedicated master nodes. The upgraded dedicated master nodes will be billed based on the new specification. For more information, see [Buy page](../../../../reseller.en-US/Quick Start/Buy page.md).
+-   **Force update** 
 
-**Note:** 
+    If the status of your Elasticsearch instance is unhealthy \(showing a **red** or **yellow** flag\), then your businesses have been severely affected. You must upgrade the instance immediately. You can select **Force Update** to ignore the status of the Elasticsearch instance and **forcibly upgrade** the instance. The upgrade process only takes a short period of time.
 
--   If you have already purchased dedicated master nodes of 1-Core 2 GB, you can select Dedicated Master Node on the Configuration Upgrade page to repurchase dedicated master nodes with a higher specification. The dedicated master nodes will be billed based on the new specification. If you are using free dedicated master nodes, they will be billed after you upgrade their configuration.
--   You can select Dedicated Master Node on the Configuration Upgrade page to upgrade the **dedicated master node specification**. The upgraded dedicated master nodes will be billed based on the new specification.
--   Select the Dedicated Master Node option on the Configuration Upgrade page to purchase dedicated master nodes or upgrade the specification of your purchased dedicated master nodes. By default, three dedicated master nodes of 2-Core 8 GB are used. The storage type of the dedicated master nodes is cloud disk. Each dedicated master node is assigned 20 GB of storage space.
+    **Note:** 
 
- **Client nodes** 
+    -   The Elasticsearch instance needs to **restart** to complete the **force update** process.
+    -   During the **force update** process, the services running on the Elasticsearch instance may become unstable.
+    -   If you do not select **Force Update**, the **restart** method is used to upgrade the instance by default. For more information, see [Restart instances](reseller.en-US/User Guide/Instance management/Instance management.md#section_p5n_ccm_zgb).
+    -   If the status of your Alibaba Cloud Elasticsearch instance is not healthy \(a **red** or **yellow** flag\), then the system will automatically select **Force Update** for you. Elasticsearch will not use the **restart** method to upgrade the instance.
+-   **Node storage** 
 
-You can select the **Client Node** option on the Configuration Upgrade page to purchase client nodes or upgrade the specification of your purchased client nodes. The upgraded client nodes will be billed based on the new specification. For more information, see [Buy page](../../../../reseller.en-US/Quick Start/Buy page.md).
+    The storage space of nodes is measured in GiB. A standard SSD disk can provide up to 2,048 GiB \(2 TiB\) of storage space.
 
-**Note:** Select the Client Node option on the Configuration Upgrade page to purchase client nodes or upgrade your purchased client nodes. By default, two client nodes of 2-Core 8 GB are used. The storage type of the client nodes is cloud disk. Each client node is assigned 20 GB of storage space.
+    You can scale out an ultra disk to up 2 TiB. When you purchase an ultra disk, you can set the storage space to up to 5,120 GiB \(5 TiB\). Ultra disks larger than 2,048 GiB include 2,560 GiB, 3,072 GiB, 3,584 GiB, 4,096 GiB, 4,608 GiB, and 5,120 GiB.
 
- **Warm node** 
-
-You can select the **Client Node** option on the Configuration Upgrade page to purchase client nodes or upgrade the specification of your purchased client nodes. The upgraded client nodes will be billed based on the new specification. For more information, see [Buy page](../../../../reseller.en-US/Quick Start/Buy page.md).
-
-**Note:** Select the Client Node option on the Configuration Upgrade page to purchase client nodes or upgrade your purchased client nodes. By default, two client nodes of 2-Core 8 GB are used. The storage type of the client nodes is cloud disk. Each client node is assigned 500 GB of storage space.
-
-## Restart {#section_scp_mgm_zgb .section}
-
-If the health status of your Elasticsearch instance is **green**, the Elasticsearch instance can provide services continuously during the upgrade restart process in most cases. You must make sure that your Elasticsearch instance has a minimum of one replica. The restart process may be time-consuming. **Exceptions may occur during the restart process and the health status of your Elasticsearch instance may temporarily change to red**.
-
-**Note:** 
-
--   The nodes of an Elasticsearch instance may have a CPU and memory usage spike during the restart process. Your queries or pushing services may become unstable or fail. Typically, these services will recover after a short period of time. **Exceptions may occur during the restart process and the health status of your Elasticsearch instance may temporarily change to red**.
--   You must make sure that the health status of your Elasticsearch instance is **green**.
-
-## Force update {#section_h1w_mgm_zgb .section}
-
-If the health status of your Elasticsearch instance is **red** or **yellow**, this indicates that your services running on the instance have been severely affected. To resolve this issue, you must immediately upgrade your instance. You can select **Force Update** to ignore the status of the Elasticsearch instance and **forcibly upgrade** the instance. The upgrade process takes only a short period of time.
-
-**Note:** 
-
--   The **Force Update** operation will **restart** the Alibaba Cloud Elasticsearch instance.
--   If you do not select **Force Update**, Elasticsearch uses the **restart** method to upgrade the instance.
--   If the health status of your Elasticsearch instance is **red** or **yellow**, the **Force Update** option is automatically selected. You cannot use the **restart** method to upgrade the instance.
--   The force update operation will make your services running on the Elasticsearch instance become unstable during the restart process.
-
- **Storage** 
-
-Follow the tips on the page to modify the storage space per data node. For more information, see [Buy page](../../../../reseller.en-US/Quick Start/Buy page.md).
-
-**Note:** You cannot change the storage space for a data node that is configured with an ultra disk larger than 2,048 GB.
 
