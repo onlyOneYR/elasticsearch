@@ -1,32 +1,38 @@
 # High reliability {#concept_wwx_lck_zgb .concept}
 
-## Auto snapshots {#section_o4j_j3k_zgb .section}
+This topic introduces the high reliability of Alibaba Cloud Elasticsearch based on auto-creation, restoration, and storage of snapshots and load balancing.
 
-Alibaba Cloud Elasticsearch support creating auto snapshots. You can enable this feature on the **Snapshots** page in the console. You can adjust the time when the daily snapshot is automatically created based on your business needs. This feature allows you to back up your data for disaster recovery. For more information, see [Snapshots](../../../../reseller.en-US/User Guide/Instance management/Data backup/Snapshots.md#).
+## Auto snapshot {#section_o4j_j3k_zgb .section}
 
- **Restore snapshots** 
+Alibaba Cloud Elasticsearch instances support the auto snapshot feature. You can enable auto snapshot on the Snapshots page in the Alibaba Cloud Elasticsearch console and then set the snapshot creation cycle. Elasticsearch then creates a snapshot daily at the scheduled time. This feature allows you to back up your data for disaster recovery. For more information, see [Snapshots](../../../../reseller.en-US/User Guide/Instance management/Data backup/Snapshots.md#).
 
-To restore a snapshot, log on to the Alibaba Cloud Elasticsearch console and click View Tutorial on the **Snapshots** page. You will be redirected to [Auto snapshot guide](../../../../reseller.en-US/User Guide/Instance management/Data backup/Auto snapshot guide.md). The topic describes how to restore a snapshot.
+ Restore snapshots 
 
-**Note:** 
-
--   Alibaba Cloud Elasticsearch only stores auto snapshots that are created within the last five days.
--   An auto snapshot can only be restored to the Alibaba Cloud Elasticsearch instance where the snapshot is created.
-
-## Store snapshots in Object Storage Service {#section_e5q_j3k_zgb .section}
-
-Alibaba Cloud Elasticsearch instance snapshots can be stored in Object Storage Service \(OSS\). You must create an OSS instance in the same region that the Alibaba Cloud Elasticsearch instance is created. Perform the steps described in **Snapshot and recovery** to run the command to create snapshots and create snapshots on the specified indexes.
-
-You can also run the restore command to restore indexes in a specified snapshot that has been created before. This method allows you to back up your data for disaster recovery. For more information, see [Snapshot and recovery](../../../../reseller.en-US/User Guide/Snapshot and recovery.md).
+On the Snapshots page of the Alibaba Cloud Elasticsearch console, you can use a specified snapshot to restore data. For more information, see [Auto snapshot guide](../../../../reseller.en-US/User Guide/Instance management/Data backup/Auto snapshot guide.md).
 
 **Note:** 
 
--   We recommend that you use OSS to store snapshots. However, OSS Archive buckets are not supported.
--   A snapshot stored in OSS can be restored into another Alibaba Cloud Elasticsearch instance. This instance must be created in the same region as the instance where the snapshot is created.
--   You can run the command to create snapshots or restore indexes in a specified snapshot.
--   A data node can restore 40 MB of data per second, by default. You can perform the steps described in [Snapshot and Restore](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html) to modify the `max_restore_bytes_per_sec` parameter that throttles the restore rate.
+-   Alibaba Cloud Elasticsearch only stores snapshots that are created within the last three days.
+-   A snapshot created by the auto snapshot feature can only be restored to the Alibaba Cloud Elasticsearch instance where the snapshot is created.
 
-## Server Load Balancing {#section_pmb_k3k_zgb .section}
+## Store snapshots on OSS {#section_e5q_j3k_zgb .section}
 
-Alibaba Cloud Elasticsearch instances allow you to use Server Load Balancer \(SLB\) to balance the load. To use SLB, you need to specify the internal or public IP address of the Alibaba Cloud Elasticsearch instance in your client. The client can then access the Alibaba Cloud Elasticsearch instance to balance the load.
+Alibaba Cloud Elasticsearch allows you to store the snapshots of your Elasticsearch instance on Alibaba Cloud Object Storage Service \(OSS\). To store snapshots on OSS, you must first purchase the OSS service in the same region as your Elasticsearch instance. You can call the snapshot creation operation to create a snapshot of the specified index data. For more information, see [Snapshots and data restoration](../../../../reseller.en-US/User Guide/Snapshots and data restoration.md#).
+
+ Restore 
+
+Alibaba Cloud Elasticsearch allows you to call the restore operation to restore index data from a specified snapshot. This feature enables support for disaster recovery. For more information, see [Snapshots and data restoration](../../../../reseller.en-US/User Guide/Snapshots and data restoration.md#).
+
+**Note:** 
+
+-   We recommend that you use OSS standard buckets to store snapshots. OSS Archive buckets are not supported.
+-   A snapshot stored on OSS can be restored to an Alibaba Cloud Elasticsearch instance in the same region as OSS.
+-   You can call the corresponding operation to create a snapshot or restore the index data in a specified snapshot.
+-   By default, each Alibaba Cloud Elasticsearch data node can process 40 MB of data. You can reference the [Snapshot And Restore](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html) page on the official Elasticsearch site and set the `max_restore_bytes_per_sec` parameter to tune the data processing capability of the data nodes.
+
+## Load balancing {#section_pmb_k3k_zgb .section}
+
+Alibaba Cloud Elasticsearch instances support load balancing. You can specify the public or internal network address of your Elasticsearch instance on your client to access the Elasticsearch instance. Your requests are evenly distributed to all data nodes of the Elasticsearch instance based on load balancing.
+
+**Note:** The load balancing among these data nodes depends on the number and size of index shards. We recommend that you reference [Calculate shard size](../../../../reseller.en-US/Quick Start/Calculate the amount of resources.md#section_tjp_qfl_zgb) and then determine the number and size of the index shards properly when you create indexes.
 
