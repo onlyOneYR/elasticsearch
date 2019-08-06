@@ -28,7 +28,7 @@ Alibaba Cloud Elasticsearch allows you to call the restore operation to restore 
 -   We recommend that you use OSS standard buckets to store snapshots. OSS Archive buckets are not supported.
 -   A snapshot stored on OSS can be restored to an Alibaba Cloud Elasticsearch instance in the same region as OSS.
 -   You can call the corresponding operation to create a snapshot or restore the index data in a specified snapshot.
--   By default, each Alibaba Cloud Elasticsearch data node can process 40 MB of data. You can reference the [Snapshot And Restore](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html) page on the official Elasticsearch site and set the `max_restore_bytes_per_sec` parameter to tune the data processing capability of the data nodes.
+-   By default, each Alibaba Cloud Elasticsearch data node can process 40 MB of data per second. You can reference the [Snapshot And Restore](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html) page on the official Elasticsearch site and set the `max_restore_bytes_per_sec` parameter to tune the data processing capability of the data nodes.
 
 ## Load balancing {#section_pmb_k3k_zgb .section}
 
