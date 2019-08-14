@@ -8,14 +8,14 @@ Alibaba Cloud Elasticsearch supports both the **subscription** and **pay-as-you-
 
 -   **Subscription**: Currently, Alibaba Cloud Elasticsearch offers promotional discount based on the subscription duration: monthly or annual. Alibaba Cloud Elasticsearch subscription instances purchased on the Alibaba Cloud International site do not support conditional refunds or unconditional refunds within five days. If you want to cancel your subscription, make sure that all data on the subscription instance has been backed up. Sign in on the Alibaba Cloud International site, and select **Console** \> **Billing Management** \> **Renew**, and manually disable the **auto-renewal** feature. Before the end of the current billing cycle, you can still use the Elasticsearch instance. However, the subscription fee is not refunded. Alibaba Cloud will stop renewing your instance in the next billing cycle.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156395873439941_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156574660139941_en-US.png)
 
     -   If the auto-renewal feature is disabled, you must log on to the Elasticsearch console and manually renew the overdue instances. For more information, see [Overdue payments](../../../../reseller.en-US/Product Introduction/Overdue payments.md).
     -   Elasticsearch instances cannot be manually released in the console.
     -   Auto-renewal is supported and disabled by default. For more information, see the **Auto-renewal** section in this topic.
 -   **Pay-as-you-go**: We recommend that you purchase Alibaba Cloud Elasticsearch **pay-as-you-go** instances for testing purposes at the development and testing stages.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156395873439942_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156574660139942_en-US.png)
 
     -   Auto-renewal is supported. For more information, see [Overdue payments](../../../../reseller.en-US/Product Introduction/Overdue payments.md).
     -   You can log on to the Elasticsearch console, click **More**, and then select Release to manually release a pay-as-you-go instance.
@@ -87,7 +87,7 @@ Alibaba Cloud Elasticsearch supports the following [Regions and zones](../../../
 -   China \(Shenzhen\): Zone C.
 -   India \(Mumbai\): Zone A.
 -   Singapore: Zone A and Zone B.
--   Hong Kong: Zone B and Zone C.
+-   Hong Kong \(China\): Zone B and Zone C.
 -   US \(Silicon Valley\): Zone A and Zone B.
 -   Malaysia \(Kuala Lumpur\): Zone A and Zone B.
 -   Germany \(Frankfurt\): Zone A and Zone B.
