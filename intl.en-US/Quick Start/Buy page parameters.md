@@ -8,16 +8,16 @@ Alibaba Cloud Elasticsearch supports both the **subscription** and **pay-as-you-
 
 -   **Subscription**: Currently, Alibaba Cloud Elasticsearch offers promotional discount based on the subscription duration: monthly or annual. Alibaba Cloud Elasticsearch subscription instances purchased on the Alibaba Cloud International site do not support conditional refunds or unconditional refunds within five days. If you want to cancel your subscription, make sure that all data on the subscription instance has been backed up. Sign in on the Alibaba Cloud International site, and select **Console** \> **Billing Management** \> **Renew**, and manually disable the **auto-renewal** feature. Before the end of the current billing cycle, you can still use the Elasticsearch instance. However, the subscription fee is not refunded. Alibaba Cloud will stop renewing your instance in the next billing cycle.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156574660139941_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156583941939941_en-US.png)
 
-    -   If the auto-renewal feature is disabled, you must log on to the Elasticsearch console and manually renew the overdue instances. For more information, see [Overdue payments](../../../../reseller.en-US/Product Introduction/Overdue payments.md).
+    -   If the auto-renewal feature is disabled, you must log on to the Elasticsearch console and manually renew the overdue instances. For more information, see [Overdue payments](../../../../intl.en-US/Product Introduction/Overdue payments.md).
     -   Elasticsearch instances cannot be manually released in the console.
-    -   Auto-renewal is supported and disabled by default. For more information, see the **Auto-renewal** section in this topic.
+    -   Auto-renewal is supported and disabled by default. For more information, see the [Auto-renewal description](#table_zov_hhm_0nc) in this topic.
 -   **Pay-as-you-go**: We recommend that you purchase Alibaba Cloud Elasticsearch **pay-as-you-go** instances for testing purposes at the development and testing stages.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156574660139942_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134283/156583941939942_en-US.png)
 
-    -   Auto-renewal is supported. For more information, see [Overdue payments](../../../../reseller.en-US/Product Introduction/Overdue payments.md).
+    -   Auto-renewal is supported. For more information, see [Overdue payments](../../../../intl.en-US/Product Introduction/Overdue payments.md).
     -   You can log on to the Elasticsearch console, click **More**, and then select Release to manually release a pay-as-you-go instance.
 
 ## Parameters {#section_1lw_wnm_zaf .section}
@@ -79,7 +79,7 @@ Alibaba Cloud Elasticsearch supports both the **subscription** and **pay-as-you-
 
 ## Regions and zones {#section_wsg_m4l_zgb .section}
 
-Alibaba Cloud Elasticsearch supports the following [Regions and zones](../../../../reseller.en-US/General Reference/Regions and zones.md#):
+Alibaba Cloud Elasticsearch supports the following [Regions and zones](../../../../intl.en-US/General Reference/Regions and zones.md#):
 
 -   China \(Hangzhou\): Zone B, Zone F, Zone G, Zone H, Zone I, and Zone E.
 -   China \(Beijing\): Zone E, Zone A, Zone C, and Zone D.
@@ -87,7 +87,7 @@ Alibaba Cloud Elasticsearch supports the following [Regions and zones](../../../
 -   China \(Shenzhen\): Zone C.
 -   India \(Mumbai\): Zone A.
 -   Singapore: Zone A and Zone B.
--   Hong Kong \(China\): Zone B and Zone C.
+-   China\(Hong Kong\): Zone B and Zone C.
 -   US \(Silicon Valley\): Zone A and Zone B.
 -   Malaysia \(Kuala Lumpur\): Zone A and Zone B.
 -   Germany \(Frankfurt\): Zone A and Zone B.
@@ -206,7 +206,7 @@ The following table shows the supported instance types and relevant specificatio
 -   You cannot release your purchased dedicated master nodes.
 -   You cannot downgrade your purchased dedicated master nodes.
 
-We recommend that you purchase dedicated master nodes to improve the stability of your services. When you purchase an Alibaba Cloud Elasticsearch instance, click **Yes** on the right side of **Dedicated Master Node** to purchase dedicated master nodes. You can also purchase or upgrade dedicated master nodes on the [Cluster upgrade](../../../../reseller.en-US/User Guide/Instance management/Cluster upgrade.md#) page. The dedicated master nodes will be billed based on the new specification.
+We recommend that you purchase dedicated master nodes to improve the stability of your services. When you purchase an Alibaba Cloud Elasticsearch instance, click **Yes** on the right side of **Dedicated Master Node** to purchase dedicated master nodes. You can also purchase or upgrade dedicated master nodes on the [Cluster upgrade](../../../../intl.en-US/User Guide/Instance management/Cluster upgrade.md#) page. The dedicated master nodes will be billed based on the new specification.
 
 Alibaba Cloud Elasticsearch supports the following types of dedicated master nodes. For more information about pricing, see [Pricing](https://www.alibabacloud.com/product/elasticsearch).
 
@@ -236,7 +236,7 @@ Alibaba Cloud Elasticsearch supports the following types of dedicated master nod
 
 You can purchase client nodes to share the CPU overheads of data nodes in order to improve the computing performance and service stability. For CPU-intensive services, we recommend that you purchase client nodes. For example, you can use client nodes to share the overheads if too many aggregation operations are performed. For more information, see [Elasticsearch official node types](https://www.elastic.co/guide/en/elasticsearch/reference/6.3/modules-node.html).
 
-When you purchase an Alibaba Cloud Elasticsearch instance, click **Yes** on the right side of **Client Node** to purchase client nodes. You can also purchase or upgrade client nodes on the [Cluster upgrade](../../../../reseller.en-US/User Guide/Instance management/Cluster upgrade.md#) page. The client nodes will be charged based on the new specification.
+When you purchase an Alibaba Cloud Elasticsearch instance, click **Yes** on the right side of **Client Node** to purchase client nodes. You can also purchase or upgrade client nodes on the [Cluster upgrade](../../../../intl.en-US/User Guide/Instance management/Cluster upgrade.md#) page. The client nodes will be charged based on the new specification.
 
 Alibaba Cloud Elasticsearch supports the following types of client nodes. For more information about pricing, see [Pricing](https://www.alibabacloud.com/product/elasticsearch).
 
@@ -262,7 +262,7 @@ If your business includes the following types of indexes at the same time, we re
 -   Frequently queried or written indexes
 -   Infrequently queried or written indexes, typically indexes of records.
 
-When you purchase an Alibaba Cloud Elasticsearch instance, click **Yes** on the right side of **Warm Node** to purchase warm nodes. You can also purchase or upgrade warm nodes on the [Cluster upgrade](../../../../reseller.en-US/User Guide/Instance management/Cluster upgrade.md#) page. The warm nodes will be billed based on the new specification.
+When you purchase an Alibaba Cloud Elasticsearch instance, click **Yes** on the right side of **Warm Node** to purchase warm nodes. You can also purchase or upgrade warm nodes on the [Cluster upgrade](../../../../intl.en-US/User Guide/Instance management/Cluster upgrade.md#) page. The warm nodes will be billed based on the new specification.
 
  Hot-warm architecture 
 
