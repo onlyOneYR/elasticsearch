@@ -1,12 +1,12 @@
 # analysis-aliws插件使用文档 {#concept_1664077 .concept}
 
-analysis-aliws是阿里云Elasticsearch自带的一个系统默认插件。通过analysis-aliws插件您可以在系统中集成对应的分析器和分词器，完成文档的分析和检索。
+analysis-aliws是阿里云Elasticsearch自带的一个系统默认插件。通过analysis-aliws插件，您可以在Elasticsearch中集成对应的分析器和分词器，完成文档的分析和检索。
 
 ## 安装analysis-aliws插件 {#section_19x_pwz_omz .section}
 
 登录[阿里云Elasticsearch控制台](https://elasticsearch-cn-hangzhou.console.aliyun.com/)，单击**实例ID** \> **插件配置** \> **系统默认插件列表** 。在**系统默认插件列表**列表中安装analysis-aliws插件，详情请参见[卸载/安装系统默认插件](cn.zh-CN/用户指南/实例管理/插件配置/系统默认插件列表.md#section_d0y_kyx_fu0)。
 
-![analysis-aliws插件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1318926/156566758255100_zh-CN.png)
+![analysis-aliws插件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1318926/156583408555100_zh-CN.png)
 
 **说明：** analysis-aliws插件默认为**未安装**状态。
 
