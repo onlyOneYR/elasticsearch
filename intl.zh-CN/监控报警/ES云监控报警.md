@@ -28,25 +28,25 @@
 
 登录ES控制台，进入您的ES实例基本信息界面，点击集群监控转到ES云监控。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839982_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323039982_zh-CN.png)
 
 **云监控Elasticsearch标签**
 
 使用账号登录阿里云控制台，选择产品导航栏下的云监控，再选择云服务监控菜单栏下的Elasticsearch。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839983_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323139983_zh-CN.png)
 
 ## 监控指标配置 {#section_ffl_q1m_zgb .section}
 
 1.  选择您需要查看的区域，点击ES实例ID
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839984_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323139984_zh-CN.png)
 
 2.  指标详情页面点击创建报警规则
 
     您可在此页面查看到集群既往监控数据，目前只保留1月内的监控信息。通过创建报警规则，可对此实例配置报警监控。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839985_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323139985_zh-CN.png)
 
 3.  填写相应的规则名称及规则描述
 
@@ -55,19 +55,19 @@
     -   集群的状态Green、Yellow、Red转换成数值对应 0.0、1.0、2.0。所以在配置集群状态报警指标时，需要按照对应数值大小进行配置报警。
     -   通道沉默时间是指，同一个指标在一定时间范围内，只会触发一次报警。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839986_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323139986_zh-CN.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839987_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323239987_zh-CN.png)
 
 4.  选择报警联系组
 
     如果没有报警联系组，可以点击快速创建联系人组，进行创建。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839988_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323239988_zh-CN.png)
 
 5.  点击确认按钮，保存报警配置。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/155358157839989_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134321/156111323239989_zh-CN.png)
 
 
 **说明：** 

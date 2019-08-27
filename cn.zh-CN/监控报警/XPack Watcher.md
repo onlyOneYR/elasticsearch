@@ -31,7 +31,7 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
 
 以配置Webhook Action为例（Webhook采用钉钉群机器人）。
 
-1.  [购买阿里云ECS实例](../../../../cn.zh-CN/个人版快速入门/创建ECS实例.md#)。
+1.  [购买阿里云ECS实例](../../../../intl.zh-CN/个人版快速入门/创建ECS实例.md#)。
 
     购买的ECS要与阿里云Elasticsearch实例在同一个区域和VPC下，并且需要能够访问公网。
 
@@ -45,7 +45,7 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
     3.  在**安全组规则**页面，单击**添加安全组规则**。
     4.  填写相关参数，单击**确定**，即可完成配置。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156283887649922_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156387035649922_zh-CN.png)
 
         -   **规则方向**选择**入方向**。
         -   **授权策略**为默认的**允许**。
@@ -60,8 +60,6 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
             登录您购买的阿里云Elasticsearch实例的Kibana控制台，单击左侧菜单栏的**Monitoring**，再单击**Nodes**。
 
 3.  配置Nginx代理。
-
-    详情请参见[Nginx安装配置](http://www.runoob.com/linux/nginx-install-setup.html)。
 
     1.  修改Nginx配置文件，参考以下配置替换**Nginx安装配置**中描述的`server`部分的配置。
 
@@ -106,7 +104,7 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
 
     **说明：** 您可以通过以下方式获取钉钉群机器人的webhook地址。
 
-    创建一个钉钉报警接收群，在群的右上角找到**群机器人**，然后添加一个自定义通过webhook接入的机器人，并获取群机器人的webhook地址。详情请参见[自定义机器人](https://open-doc.dingtalk.com/docs/doc.htm?spm=a219a.7629140.0.0.karFPe&treeId=257&articleId=105735&docType=1)。
+    创建一个钉钉报警接收群，在群的右上角找到**群机器人**，然后添加一个自定义通过webhook接入的机器人，并获取群机器人的webhook地址。
 
 4.  设置报警。
 
@@ -178,7 +176,7 @@ XPack Watcher功能主要由Trigger、Input、Condition、Actions组成。
 
     **说明：** 开启Watcher操作会触发集群重启，为保证您的业务不受影响，请确认后操作。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156283887649905_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134322/156387035649905_zh-CN.png)
 
 4.  勾选**该操作会重启实例，请确认后操作**，然后单击**确认**。
 
