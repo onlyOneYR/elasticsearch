@@ -8,13 +8,13 @@ A reference architecture diagram is shown in the following figure:
 
 ## Introduction {#section_x4j_php_fhb .section}
 
- Concepts 
+ **Concepts** 
 
--   Elasticsearch: A distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected.
--   Kibana: Lets you visualize your Elasticsearch data and navigate the Elastic Stack.
--   Amazon Elasticsearch Service: Amazon Elasticsearch Service is a fully managed service that delivers Elasticsearch’s easy-to-use APIs and real-time analytics capabilities alongside the availability, scalability, and security that production workloads require. It’s easy to deploy, secure, operate, and scale Elasticsearch for log analytics, full text search, application monitoring, and more.
--   Alibaba Elasticsearch Service: Alibaba Cloud’s Elasticsearch service. In this guide, we explain how to use Elasticsearch through our Alibaba Cloud China site. Have not onboard on International site.
--   Snapshot and Restore: You can store snapshots of individual indexes or an entire cluster in a remote repository like a shared file system, S3, or HDFS. These snapshots can be restored relatively quickly, so they are ideal for backup. However, snapshots can only be restored to versions of Elasticsearch that can read the indexes:
+-   **Elasticsearch**: A distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected.
+-   **Kibana**: Lets you visualize your Elasticsearch data and navigate the Elastic Stack.
+-   **Amazon Elasticsearch Service**: Amazon Elasticsearch Service is a fully managed service that delivers Elasticsearch’s easy-to-use APIs and real-time analytics capabilities alongside the availability, scalability, and security that production workloads require. It’s easy to deploy, secure, operate, and scale Elasticsearch for log analytics, full text search, application monitoring, and more.
+-   **Alibaba Elasticsearch Service**: Alibaba Cloud’s Elasticsearch service. In this guide, we explain how to use Elasticsearch through our Alibaba Cloud China site. Have not onboard on International site.
+-   **Snapshot and Restore**: You can store snapshots of individual indexes or an entire cluster in a remote repository like a shared file system, S3, or HDFS. These snapshots can be restored relatively quickly, so they are ideal for backup. However, snapshots can only be restored to versions of Elasticsearch that can read the indexes:
 
     -   A snapshot of an index created in 5.x can be restored to 6.x.
     -   A snapshot of an index created in 2.x can be restored to 5.x.
@@ -26,7 +26,7 @@ A reference architecture diagram is shown in the following figure:
     Snapshots are incremental and can contain indexes created in various versions of Elasticsearch. If any indexes in a snapshot were created in an incompatible version, you will not be able restore the snapshot.
 
 
- Solution overview 
+ **Solution overview** 
 
 Elasticsearch \(ES\) indexes can be migrated with following steps:
 
@@ -51,15 +51,15 @@ Elasticsearch \(ES\) indexes can be migrated with following steps:
 
 ## Prerequisites {#section_vsd_f3p_fhb .section}
 
--   Elasticsearch service 
+-   **Elasticsearch service** 
     -   The version number of AWS ES is 5.5.2, located in the Singapore region.
     -   The version number of Alibaba Cloud ES is 5.5.3, located in Hangzhou.
     -   The demo index name is movies.
--   Manual Snapshot Prerequisites on AWS 
+-   **Manual Snapshot Prerequisites on AWS** 
 
     Amazon ES takes daily automated snapshots of the primary index shards in a domain, and stores these automated snapshots in a preconfigured Amazon S3 bucket for 14 days at no additional charge to you. You can use these snapshots to restore the domain.
 
-    You cannot, however, use automated snapshots to migrate to new domains. Automated snapshots are read-only from within a given domain. For migrations, you must use manual snapshots stored in your own repository \(an S3 bucket\). Standard S3 charges apply for manual snapshots.
+    You cannot, however, use automated snapshots to migrate to new domains. Automated snapshots are read-only from within a given domain. **To migrate data, you must use manual snapshots stored in your own bucket \(S3 bucket\).**. Standard S3 charges apply for manual snapshots.
 
     To create and restore index snapshots manually, you must work with IAM and Amazon S3. Verify that you have met the following prerequisites before you attempt to take a snapshot.
 
@@ -69,7 +69,7 @@ Elasticsearch \(ES\) indexes can be migrated with following steps:
     |Create an IAM role|Delegates permissions to Amazon Elasticsearch Service. The trust relationship for the role must specify Amazon Elasticsearch Service in the Principal statement. The IAM role also is required to register your snapshot repository with Amazon ES. Only IAM users with access to this role may register the snapshot repository.|
     |Create an IAM policy|Specifies the actions that Amazon S3 may perform with your S3 bucket. The policy must be attached to the IAM role that delegates permissions to Amazon Elasticsearch Service. The policy must specify an S3 bucket in a Resource statement.|
 
-    -   Create an S3 bucket 
+    -   **Create an S3 bucket**.
 
         You need an S3 bucket to store manual snapshots. Make a note of its Amazon Resource Name \(ARN\). You need it for the following:
 
@@ -81,7 +81,7 @@ Elasticsearch \(ES\) indexes can be migrated with following steps:
         arn:aws:s3:::eric-es-index-backups
         ```
 
-    -   Create an IAM role 
+    -   **Create an IAM role**.
 
         You must have a role that specifies Amazon Elasticsearch Service, es.amazonaws.com, in a Service statement in its trust relationship, as shown in the following example:
 
@@ -109,7 +109,7 @@ Elasticsearch \(ES\) indexes can be migrated with following steps:
 
         When you create an AWS service role by using the IAM Console, Amazon ES is not included in the **Select role type** list. However, you can still create the role by choosing **Amazon EC2**, following the steps to create the role, and then editing the role’s trust relationships to es.amazonaws.com instead of ec2.amazonaws.com.
 
-    -   Create an IAM policy 
+    -   Create an IAM policy.
 
         You must attach an IAM policy to the IAM role. The policy specifies the S3 bucket that is used to store manual snapshots for your Amazon ES domain. The following example specifies the ARN of the eric-es-index-backups bucket:
 
@@ -147,7 +147,7 @@ Elasticsearch \(ES\) indexes can be migrated with following steps:
 
         You can make sure the policy is correct by looking at the **Policies** \> **Summary**, as follows:![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/72927/intl_en/1527693868929/05.png)
 
-    -   Attach IAM Policy to IAM Role
+    -   **Add an IAM policy for an IAM role**.
 
         ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/72927/intl_en/1527693915659/06.png)
 
@@ -158,13 +158,13 @@ You must register the snapshot directory with Amazon Elasticsearch Service befor
 
 You can’t use curl to perform this operation because it doesn’t support AWS request signing. Instead, use the [Sample Python Client](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/72927/intl_en/1527694314531/Sample%20Python%20Client.docx) to register your snapshot directory.
 
-1.  Modify Sample Python Client 
+1.  **Modify the Python client example**.
 
     Download a copy of the file [Sample Python Client](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/72927/intl_en/1527694314531/Sample%20Python%20Client.docx), then modify the values in yellow in that document to match your real values. Copy the contents of Sample Python Client into a Python file called “snapshot.py” after you have finished editing.
 
     Sample Python Client:
 
-    |Variable name|Description|
+    |Variable Name|Description|
     |-------------|-----------|
     |region|AWS Region where you created the snapshot repository|
     |host|Endpoint for your Amazon ES domain|
@@ -175,7 +175,7 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
  If the S3 bucket is in the us-east-1 region, you need to use `"endpoint": "s3.amazonaws.com"` in place of `"region": "us-east-1"`.|
 
-2.  Install Amazon Web Services Library boto-2.48.0 
+2.  **Install Amazon Web Services Library boto-2.48.0**.
 
     This sample Python client requires that you install version 2.x of the boto package on the computer where you register your snapshot repository.
 
@@ -186,7 +186,7 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
     # python setup.py install
     ```
 
-3.  Execute Python client to register snapshot directory 
+3.  **Run the Python client to register the snapshot repository.**.
 
     ``` {#codeblock_yw3_qjj_6ch}
     # pyth
@@ -206,7 +206,7 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
 ## Snapshot and restore for the first time {#section_ic4_3jp_fhb .section}
 
-1.  Take a snapshot manually on AWS ES 
+1.  **Manually take snapshots on AWS ES**.
 
     The following commands are all performed on **Kibana** \> **Dev Tools**, you can also perform them using curl from the Linux or Mac OSX command line.
 
@@ -231,15 +231,15 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
         ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/72927/intl_en/1527696560586/09.png)
 
-2.  Pull snapshot data from AWS S3 to Alibaba Cloud OSS 
+2.  **Extract snapshot data from AWS S3 to Alibaba Cloud OSS**.
 
-    In this step, you need to pull snapshot data from your AWS S3 bucket into Alibaba Cloud OSS. For more information, see [Migrate data from Amazon S3 to Alibaba Cloud OSS](../../../../intl.en-US/Best Practices/Migrate data to OSS/Migrate data from Amazon S3 to Alibaba Cloud OSS.md#).
+    In this step, you need to pull snapshot data from your AWS S3 bucket into Alibaba Cloud OSS. For more information, see [Migrate data from Amazon S3 to Alibaba Cloud OSS](../../../../reseller.en-US/Best Practices/Migrate data to OSS/Migrate data from Amazon S3 to Alibaba Cloud OSS.md#).
 
     After data transfer, check stored snapshot data from the OSS console.
 
     ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/72927/intl_en/1550653856005/%E5%90%88%E6%88%90.PNG)
 
-3.  Restore snapshot to an Alibaba Cloud ES instance 
+3.  **Restore a snapshot to an Elasticsearch instance**.
 
     Create a snapshot repository
 
@@ -275,7 +275,7 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
     ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/72927/intl_en/1550565009094/012.png)
 
-4.  Restore snapshots 
+4.  **Restore snapshots**.
 
     Perform the following request on **Kibana** \> **Dev Tools**.
 
@@ -294,7 +294,7 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
 ## Snapshot and restore for the last time {#section_qkl_wjp_fhb .section}
 
-1.  Create some sample data on AWS ES index movies 
+1.  **Create instance data in aws es movies index**.
 
     In the previous steps, you know that there are only three records in the index movies, so you insert another two records.
 
@@ -304,7 +304,7 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
     ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/72927/intl_en/1527698440332/016.png)
 
-2.  Take another snapshot manually 
+2.  **Manually take another snapshot**.
 
     See the Section Take a snapshot manually on AWS ES, then check the snapshot status:
 
@@ -316,7 +316,7 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
     If you check the folder indices, you can also find some differences.
 
-     Pull incremental snapshot data from AWS S3 to Alibaba Cloud OSS 
+3.  **Extract incremental snapshot data from AWS S3 to Alibaba Cloud OSS**.
 
     You can use the OSSImport tool to migrate data from S3 to OSS. Because there are 2 snapshot files stored in our S3 bucket now, we try to migrate only new files by modifying the value of isSkipExistFile in the configuration file local\_job.cfg.
 
@@ -338,9 +338,19 @@ You can’t use curl to perform this operation because it doesn’t support AWS 
 
     ![](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/pic/72927/intl_en/1527699274814/020.png)
 
-3.  Restore an incremental snapshot 
+4.  **Restore an incremental snapshot**.
 
     You can follow along with the steps from Section Restore snapshots , but the index movies needs to be closed firstly, then you have to restore the snapshot, and open the index movies again after restoration.
+
+    ``` {#codeblock_tgq_npx_u0h}
+    POST /movies/_close
+    GET movies/_stats
+    POST _snapshot/eric-snapshot-repository/snapshot_movies_2/_restore
+    {
+        "indexes": "movies"
+    }
+    POST /movies/_open
+    ```
 
     After the restore procedure completes, you can see the count 5 of documents in the index movies is the same as it is in our AWS ES instance.
 
@@ -358,6 +368,6 @@ Further reading:
 -   [https://www.elastic.co/products/elasticsearch](https://www.elastic.co/products/elasticsearch)
 -   [https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html)
 -   [https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains-snapshots.html](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains-snapshots.html)
--   [Migrate data from Amazon S3 to Alibaba Cloud OSS](../../../../intl.en-US/Best Practices/Migrate data to OSS/Migrate data from Amazon S3 to Alibaba Cloud OSS.md#)
--   [Architecture and configuration](../../../../intl.en-US/Tools/ossimport/Architecture and configuration.md#)
+-   [Migrate data from Amazon S3 to Alibaba Cloud OSS](../../../../reseller.en-US/Best Practices/Migrate data to OSS/Migrate data from Amazon S3 to Alibaba Cloud OSS.md#)
+-   [Architecture and configuration](../../../../reseller.en-US/Tools/ossimport/Architecture and configuration.md#)
 
