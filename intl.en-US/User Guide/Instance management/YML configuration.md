@@ -31,7 +31,7 @@ http.cors.allow-headers: "X-Requested-With, Content-Type, Content-Length, Author
 
 The re-indexing component allows you to reconstruct the data index on the target remote Elasticsearch cluster. This function can work for all of the remote Elasticsearch versions available, allowing you to index the data of earlier versions to the current version.
 
-```
+``` {#codeblock_mk6_xml_wez}
 POST _ reindex
 {
   "source": {
@@ -57,9 +57,9 @@ POST _ reindex
 
 -   `username` and `password` are optional. If the remote Elasticsearch server requires **Basic Authorization**, enter the username and password in the request. When use `Basic Authorization`, also use the `https` protocol, otherwise the password will be transmitted as a text.
 
--   The remote host address must be declared in `elasticsearch.yaml` by using the `reindex.remote.whitelist` attribute for the API to be called remotely. The combination of host and port is allowed. The combination of `host` and `port` is allowed. However, note that multiple host configurations must be separated by commas \(,\), for example,
+-   The remote host address must be declared in `elasticsearch.yml` by using the `reindex.remote.whitelist` attribute for the API to be called remotely. The combination of host and port is allowed. The combination of `host` and `port` is allowed. However, note that multiple host configurations must be separated by commas \(,\), for example,
 
-```
+``` {#codeblock_tdi_zzy_6w7}
 otherhost: 9200, another: 9200,127.0 .10. **: 9200,
           localhost:**
 ```
@@ -79,7 +79,7 @@ The remote service uses a stack to cache indexed data. The default maximum size 
 
 In the example below, the size of multiple index settings is 10, which is the minimum value:
 
-```
+``` {#codeblock_d7n_r1x_wzb}
 POST _ reindex
 {
   "source": {
@@ -107,7 +107,7 @@ POST _ reindex
 
 In the example below, the read timeout period of `socket` is one minute, and the connection timeout period is 10 seconds.
 
-```
+``` {#codeblock_j9l_90b_6jd}
 POST _ reindex
 {
   "source": {
@@ -135,7 +135,7 @@ POST _ reindex
 
 The index auditing configuration is as follows.
 
-```
+``` {#codeblock_4re_65w_vw8}
 xpack.security.audit.index.bulk_size: 5000
 xpack.security.audit.index.events.emit_request_body: false
 xpack.security.audit.index.events.exclude: run_as_denied,anonymous_access_denied,realm_authentication_failed,access_denied,connection_denied
@@ -152,7 +152,7 @@ Alibaba Cloud Elasticsearch instances do not support displaying request-related 
 
 After this function is enabled, the access log is output to indexes on the Elasticsearch instance. The name of indexes starts with `.security_audit_log-*`.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/155617695440144_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/156714370940144_en-US.png)
 
  **Audit log indexing configuration** 
 
@@ -178,7 +178,7 @@ The configuration item `xpack.security.audit.index.settings` in the `elasticsear
 
 The following example sets both the number of **shards** and the number of **replicas** to `1` for the audit indexes.
 
-```
+``` {#codeblock_dkf_v8w_usn}
 xpack. security. audit. index. settings:
   index:
     number_of_shards: 1
@@ -199,7 +199,7 @@ In the following example, both the write and search queue size are set to `500`.
 
 **Note:** The following parameters are not specifically identified for an ES version and by default are compatible with ES version 5.5.3 and 6.3.2.
 
-```
+``` {#codeblock_2za_9yr_oig}
 thread_pool.bulk.queue_size: 500 (Only applicable to the Elasticsearch 5.5.3 with X-Pack version)
 thread_pool.write.queue_size: 500 (Only applicable to the Elasticsearch 6.3.2 with X-Pack version)
 thread_pool.search.queue_size: 500
@@ -220,7 +220,7 @@ You can set the `index.codec` parameter by using REST API.
 -   `close` the corresponding index before running the command.
 -   $index\_name: Replace with the index name you need to set.
 
-```
+``` {#codeblock_7zs_1ru_lpg}
 PUT $ index_name/_ settings
 {
   "index": {
