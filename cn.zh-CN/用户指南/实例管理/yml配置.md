@@ -1,8 +1,10 @@
 # yml配置 {#concept_qxp_rzl_zgb .concept}
 
+本文档为您介绍阿里云Elasticsearch yml配置功能的使用方法。
+
 ## 自定义CORS访问（跨域） {#section_q4q_4xs_zgb .section}
 
- **配置信息** 
+ 配置信息 
 
 **说明：** 
 
@@ -13,7 +15,7 @@
 |配置项|描述|
 |---|--|
 |`http.cors.enabled`|跨域资源共享配置项，即配置Elasticsearch是否允许其他域资源下的浏览器向其发送请求。可设置为`true`或`false`。 -   设置为`true`，表示启用跨域资源访问。即可使Elasticsearch处理`OPTIONS` CORS请求。如果发送请求中的域信息已在`http.cors.allow-origin`中声明，那么Elasticsearch会在头信息中附加 `Access-Control-Allow-Origin`以响应跨域请求。
--   设置为`false`（默认），表示禁止跨域资源访问。即可使Elasticsearch忽略请求头中的域信息，Elasticsearch将不会以`Access-Control-Allow-Origin`信息头应答，以达到禁用CORS目的。如果客户端不支持发送附加域信息头的 `pre-flight`请求，或者不校验从服务端返回的报文的头信息中的`Access-Control-Allow-Origin`信息，那么跨域安全访问将受到影响。如果Elasticsearch关闭CORS支持, 则客户端只能尝试通过发送`OPTIONS`请求，以了解此响应信息是否存在。
+-   设置为`false`（默认），表示禁止跨域资源访问。即可使Elasticsearch忽略请求头中的域信息，Elasticsearch将不会以`Access-Control-Allow-Origin`信息头应答，以达到禁用CORS目的。如果客户端不支持发送附加域信息头的 `pre-flight`请求，或者不校验从服务端返回的报文的头信息中的`Access-Control-Allow-Origin`信息，那么跨域安全访问将受到影响。如果Elasticsearch关闭CORS支持，则客户端只能尝试通过发送`OPTIONS`请求，以了解此响应信息是否存在。
 
  |
 |`http.cors.allow-origin`| 域资源配置项，可设置接受来自哪些域名的请求。默认不允许且无配置。
@@ -23,7 +25,7 @@
  **说明：** `*`被认定为合法配置，可被识别为使集群支持来自任意域名的跨域请求，这将给Elasticsearch集群带来安全风险，不建议使用。
 
  |
-|`http.cors.max-age`|浏览器可发送`OPTIONS`请求以获取CORS配置信息，此配置项可设置获取的信息在浏览器中的缓存时间，默认为`1728000`秒 \(20 天\)。|
+|`http.cors.max-age`|浏览器可发送`OPTIONS`请求以获取CORS配置信息，此配置项可设置获取的信息在浏览器中的缓存时间，默认为`1728000`秒（20 天）。|
 |`http.cors.allow-methods`|请求方法配置项，默认为`OPTIONS, HEAD, GET, POST, PUT, DELETE`。|
 |`http.cors.allow-headers`|请求头信息配置项，默认为`X-Requested-With, Content-Type, Content-Length`。|
 |`http.cors.allow-credentials`|凭证信息配置项目，即是否允许响应头中返回`Access-Control-Allow-Credentials`信息。默认为`false`，表示不允许返回此信息。设置为`true`表示允许返回此信息。|
@@ -68,7 +70,7 @@ POST _reindex
 
 -   `host`：远程主机的地址，必须包含支持协议、域名和端口等信息，例如`https://otherhost:9200`。
 
-    **说明：** 远程主机地址需要在elasticsearch.yaml中使用`reindex.remote.whitelist`属性进行声明，才可以在远程使用此API功能。允许以`host`和`port`组合，并使用逗号分隔多个主机配置（例如`otherhost:9200, another:9200, 127.0.10.**:9200,localhost:**`）。白名单不识别协议信息，只使用主机和端口信息用于实现安全策略设定。
+    **说明：** 远程主机地址需要在elasticsearch.yml中使用`reindex.remote.whitelist`属性进行声明，才可以在远程使用此API功能。允许以`host`和`port`组合，并使用逗号分隔多个主机配置（例如`otherhost:9200, another:9200, 127.0.10.**:9200,localhost:**`）。白名单不识别协议信息，只使用主机和端口信息用于实现安全策略设定。
 
 -   `username`和`password`为可选参数，如果您所请求的远程Elasticsearch服务需要使用`Basic Authorization`，请在请求中一并提供此参数信息。通过`Basic Authorization`鉴权需要使用https协议，否则密码信息将以文本形式进行传输。
 
@@ -139,7 +141,7 @@ POST _reindex
 
 阿里云Elasticsearch实例不支持查看存盘请求的相关log文件，因此如果您想了解阿里云Elasticsearch实例请求的相关信息（例如access\_log），那么需要在控制台中开启阿里云Elasticsearch实例对应的Accesslog索引功能。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/156085268440144_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134292/156714331940144_zh-CN.png)
 
 修改生效后，Accesslog将输出到阿里云Elasticsearch实例中，并且使用`.security_audit_log-*`开头的索引名称。
 
@@ -170,7 +172,7 @@ xpack.security.audit.index.settings.index.number_of_shards: 10
 |`xpack.security.audit.index.rollover`|`daily`|控制滚动构建到新索引的频率，可以设置为`hourly`、`daily`、`weekly`或者`monthly`。|
 |`xpack.security.audit.index.events.include`|`access_denied, access_granted, anonymous_access_denied, authentication_failed, connection_denied, tampered_request, run_as_denied, run_as_granted`|控制何种Accesslog事件可以被计入到索引中。完整列单请参见[Accesslog事件类型](https://www.elastic.co/guide/en/x-pack/5.5/auditing.html#audit-event-types)|
 |`xpack.security.audit.index.events.exclude`| |构建索引过程中排除的Accesslog事件。|
-|`xpack.security.audit.index.events.emit_request_body`|`false`|当触发明确的事件类型（比如 `authentication_failed`），是否忽略或包含以REST发送的请求体。|
+|`xpack.security.audit.index.events.emit_request_body`|`false`|当触发明确的事件类型（例如 `authentication_failed`），是否忽略或包含以REST发送的请求体。|
 
 您也可以对存储Accesslog的索引进行配置，将以`xpack.security.audit.index.settings`为命名空间，配置在`elasticsearch.yml`文件中。
 
