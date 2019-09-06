@@ -15,7 +15,7 @@ Use ECS to access Elasticsearch \(optional\)
 
 **Note:** 
 
--   If your ECS instance is connected to the classic network, then you must create a ClassicLink connection to access Elasticsearch. For more information, see [Classic network errors](https://help.aliyun.com/document_detail/61359.html).
+-   If your ECS instance is connected to the classic network, then you must create a ClassicLink connection to access Elasticsearch. For more information, see [Classic network errors](../../../../reseller.en-US/FAQ/Classic network errors.md#).
 -   The ClassicLink connection is a unidirectional connection originated from the classic network to the VPC network. You cannot use this connection to access the classic network from the VPC network.
 
 If you already have an ECS instance deployed in the same VPC network as your Elasticsearch instance, then you can use this ECS instance as a client to access Elasticsearch. You only need to deploy your application or install the cURL tool on the ECS instance.

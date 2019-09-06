@@ -15,7 +15,7 @@
 
 **说明：** 
 
--   若您的ECS在经典网络中，则需要通过配置Classiclink进行访问，详情请参见 [经典网络问题](https://help.aliyun.com/document_detail/61359.html)
+-   若您的ECS在经典网络中，则需要通过配置Classiclink进行访问，详情请参见[经典网络问题](../../../../intl.zh-CN/常见问题/经典网络问题.md#)。
 -   Classiclink访问方式，只支持从经典网络单向访问VPC网络，不支持双向访问。
 
 如果在阿里云Elasticsearch对应的VPC下，已拥有阿里云ECS（Elasticsearch与ECS区域相同），可以不用重新购买阿里云ECS，也可以使用该ECS作为客户端，部署用户程序或安装curl命令进行搜索。
