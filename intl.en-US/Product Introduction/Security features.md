@@ -6,15 +6,15 @@ This topic compares Alibaba Cloud Elasticsearch instances with user-built Elasti
 
 Open-source software has typically been the first choice of attackers, such as the [MongoDB ransomware attacks](https://help.aliyun.com/noticelist/articleid/20527251.html) event. Elasticsearch has also become the target of the attackers. They may attack user-created Elasticsearch services that do not have professional security protection, and then delete important data or intrude into the business system.
 
-![Elasticsearch security background](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1000828/156505517852244_en-US.png)
+![Elasticsearch security background](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1000828/156775490552244_en-US.png)
 
-Alibaba Cloud Security Center has released a note about security risk warning on Elasticsearch and provided multiple security hardening strategies and solutions. Compared with the security protection for user-built Elasticsearch instances, the solutions provided by [Alibaba Cloud Elasticsearch](https://data.aliyun.com/product/elasticsearch) for data and service security are more reliable and professional.
+Alibaba Cloud Security Center has released a note about security risk warning on Elasticsearch and provided multiple security hardening strategies and solutions. Compared with the security protection for user-built Elasticsearch instances, the solutions provided by Alibaba Cloud Elasticsearch for data and service security are more reliable and professional.
 
 ## Security feature descriptions {#section_eta_7uq_mkd .section}
 
 Alibaba Cloud has released the fully-hosted Elasticsearch service in November 2017. Alibaba Cloud Elasticsearch provides security protection features for you to safeguard your services.
 
-![Elasticsearch security features](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1000828/156505517852236_en-US.png)
+![Elasticsearch security features](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1000828/156775490652236_en-US.png)
 
 The following table compares Alibaba Cloud Elasticsearch with user-built Elasticsearch services in security protection:
 
