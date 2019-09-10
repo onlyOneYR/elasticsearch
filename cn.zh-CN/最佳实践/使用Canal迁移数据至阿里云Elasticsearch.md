@@ -2,7 +2,7 @@
 
 本文档为您介绍如何使用Canal，将阿里云RDS for MySQL中的增量数据迁移至阿里云Elasticsearch中的方法。
 
-在使用Canal进行数据库迁移前，您需要准备以下的依赖环境：
+在使用Canal进行数据库迁移前，您需要准备以下的依赖环境。
 
 **说明：** 开通服务时，请确保RDS for MySQL、Elasticsearch和ECS在相同的**区域**、**可用区**、**VPC**、**子网**和**安全组**下。
 
@@ -10,7 +10,7 @@
 
     用来存放源数据和增量数据，开通方式请参见[创建RDS for MySQL实例](../../../../cn.zh-CN/RDS for MySQL 快速入门/创建RDS for MySQL实例.md#)。本文使用的配置如下图所示。
 
-    ![RDS for MySQL配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196659221_zh-CN.png)
+    ![RDS for MySQL配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759221_zh-CN.png)
 
 -   canal.adapter-1.1.4.tar.gz和canal.deployer-1.1.4.tar.gz。
 
@@ -18,28 +18,28 @@
 
 -   阿里云Elasticsearch。
 
-    用来接收增量数据，开通方式请参见[创建阿里云Elasticsearch实例](../../../../cn.zh-CN//创建阿里云Elasticsearch实例.md#)。本文使用的方式如下图所示。
+    用来接收增量数据，开通方式请参见[创建阿里云Elasticsearch实例](../../../../cn.zh-CN//创建阿里云Elasticsearch实例.md#)。本文使用的配置如下图所示。
 
-    ![ES配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196659222_zh-CN.png)
+    ![ES配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759222_zh-CN.png)
 
 -   阿里云ECS。
 
     用来连接RDS for MySQL，以及部署canalDeployer和canalAdapter，开通方式请参见[创建ECS实例](../../../../cn.zh-CN/个人版快速入门/创建ECS实例.md#)。本文使用的配置如下图所示。
 
-    ![ECS配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196659223_zh-CN.png)
+    ![ECS配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759223_zh-CN.png)
 
 
 ## 创建表字段及索引 {#section_tt7_ab3_ll2 .section}
 
-1.  在RDS for MySQL数据库中，创建表、字段及索引（主建）。 
+1.  在RDS for MySQL数据库中，创建表和字段。 
 
-    本文创建的表名称为**es\_test**，包含的字段及索引如下图所示。
+    本文创建的表名称为**es\_test**，包含的字段如下图所示。
 
-    ![es_test字段及索引](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759264_zh-CN.png)
+    ![es_test字段及索引](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759264_zh-CN.png)
 
 2.  在ES实例中，创建索引和mapping。 [登录Kibana控制台](../../../../cn.zh-CN/用户指南/可视化控制/Kibana/登录Kibana控制台.md#)，在开发工具页面的Console中执行以下命令创建索引和mapping。
 
-    **说明：** 创建索引和mapping需要与上一步RDS for MySQL中创建的索引和字段（名称和类型）保持一致。
+    **说明：** 创建索引和mapping需要与上一步RDS for MySQL中创建的表名称和字段（名称和类型）保持一致。
 
     ``` {#codeblock_53m_5pf_hk7}
     PUT es_test?include_type_name=true
@@ -106,7 +106,7 @@
 
     安装成功会返回如下结果。
 
-    ![MySQL源安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759224_zh-CN.png)
+    ![MySQL源安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759224_zh-CN.png)
 
 5.  安装MySQL服务器。 
 
@@ -123,7 +123,7 @@
 
     启动成功后会返回如下结果。
 
-    ![启动MySQL并查看状态](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759227_zh-CN.png)
+    ![启动MySQL并查看状态](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859227_zh-CN.png)
 
 7.  连接RDS for MySQL数据库。 
 
@@ -138,7 +138,7 @@
 
         开启时，显示如下结果。
 
-        ![开启MySQL binlog模式](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759233_zh-CN.png)
+        ![开启MySQL binlog模式](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859233_zh-CN.png)
 
     ``` {#codeblock_poc_tfr_4oe}
     mysql -h<主机名> -P<端口> -u<用户名> -p<密码> -D<数据库>
@@ -160,7 +160,7 @@
 
     连接成功后的结果如下所示。
 
-    ![连接RDS MySQL](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759232_zh-CN.png)
+    ![连接RDS MySQL](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859232_zh-CN.png)
 
 
 ## 安装JDK {#section_1uk_499_551 .section}
@@ -205,7 +205,7 @@
 
         显示以下结果说明JDK安装成功。
 
-        ![jdk安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759240_zh-CN.png)
+        ![jdk安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859240_zh-CN.png)
 
 
 ## 安装并启动Canal-server {#section_8jx_g9s_pto .section}
@@ -228,7 +228,7 @@
     vi conf/example/instance.properties
     ```
 
-    ![修改conf/example/instance.properties文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759251_zh-CN.png)
+    ![修改conf/example/instance.properties文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859251_zh-CN.png)
 
     |配置项|说明|
     |---|--|
@@ -237,14 +237,14 @@
     |canal.instance.dbPassword|RDS for MySQL数据库的密码。|
 
 4.  使用:wq命令保存文件并退出vi模式。
-5.  启动Canal-server，并查看日志。![启动canal-server](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759254_zh-CN.png)
-
- 
+5.  启动Canal-server，并查看日志。 
 
     ``` {#codeblock_00e_oyr_tun}
     ./bin/startup.sh
     cat logs/canal/canal.log
     ```
+
+    ![启动canal-server](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859254_zh-CN.png)
 
 
 ## 安装并启动Canal-adapter {#section_2tp_qfz_qw5 .section}
@@ -267,7 +267,7 @@
     vi conf/application.yml
     ```
 
-    ![修改conf/application.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759278_zh-CN.png)
+    ![修改conf/application.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859278_zh-CN.png)
 
     |配置项|说明|
     |---|--|
@@ -283,7 +283,7 @@
 4.  使用:wq命令保存文件并退出vi模式。
 5.  同样的方式，修改conf/es/\*.yml文件，定义MySQL数据到ES数据的映射字段。 
 
-    ![修改conf/es/*.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759280_zh-CN.png)
+    ![修改conf/es/*.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859280_zh-CN.png)
 
     |配置项|说明|
     |---|--|
@@ -301,12 +301,12 @@
 
     服务启动正常时，结果如下所示。
 
-    ![Canal-adapter服务日志](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759329_zh-CN.png)
+    ![Canal-adapter服务日志](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859329_zh-CN.png)
 
 
 ## 验证Canal自动导出增量数据 {#section_fxm_zna_2n1 .section}
 
-1.  在RDS for MySQl数据库中，新增/修改/删除数据库中**es\_test**表的数据。 
+1.  在RDS for MySQL数据库中，新增/修改/删除数据库中**es\_test**表的数据。 
 
     ``` {#codeblock_65d_y71_ixz}
     insert `elasticsearch`.`es_test`(`count`,`id`,`name`,`color`) values('11',2,'canal_test2','red');
@@ -321,6 +321,6 @@
 
     数据同步成功后，返回如下结果。
 
-    ![数据同步成功结果](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156802196759328_zh-CN.png)
+    ![数据同步成功结果](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859328_zh-CN.png)
 
 
