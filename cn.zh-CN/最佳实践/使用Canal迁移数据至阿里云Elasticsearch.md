@@ -1,6 +1,6 @@
 # 使用Canal迁移数据至阿里云Elasticsearch {#task_2054659 .task}
 
-本文档为您介绍如何使用Canal，将阿里云RDS for MySQL中的增量数据迁移至阿里云Elasticsearch中的方法。
+本文档为您介绍如何使用Canal将阿里云RDS for MySQL中的增量数据迁移至阿里云Elasticsearch中。
 
 在使用Canal进行数据库迁移前，您需要准备以下的依赖环境。
 
@@ -10,7 +10,7 @@
 
     用来存放源数据和增量数据，开通方式请参见[创建RDS for MySQL实例](../../../../cn.zh-CN/RDS for MySQL 快速入门/创建RDS for MySQL实例.md#)。本文使用的配置如下图所示。
 
-    ![RDS for MySQL配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759221_zh-CN.png)
+    ![RDS for MySQL配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764059221_zh-CN.png)
 
 -   canal.adapter-1.1.4.tar.gz和canal.deployer-1.1.4.tar.gz。
 
@@ -20,22 +20,22 @@
 
     用来接收增量数据，开通方式请参见[创建阿里云Elasticsearch实例](../../../../cn.zh-CN//创建阿里云Elasticsearch实例.md#)。本文使用的配置如下图所示。
 
-    ![ES配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759222_zh-CN.png)
+    ![ES配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764059222_zh-CN.png)
 
 -   阿里云ECS。
 
     用来连接RDS for MySQL，以及部署canalDeployer和canalAdapter，开通方式请参见[创建ECS实例](../../../../cn.zh-CN/个人版快速入门/创建ECS实例.md#)。本文使用的配置如下图所示。
 
-    ![ECS配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759223_zh-CN.png)
+    ![ECS配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764059223_zh-CN.png)
 
 
-## 创建表字段及索引 {#section_tt7_ab3_ll2 .section}
+## 创建表和字段 {#section_tt7_ab3_ll2 .section}
 
 1.  在RDS for MySQL数据库中，创建表和字段。 
 
     本文创建的表名称为**es\_test**，包含的字段如下图所示。
 
-    ![es_test字段及索引](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759264_zh-CN.png)
+    ![es_test字段及索引](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159264_zh-CN.png)
 
 2.  在ES实例中，创建索引和mapping。 [登录Kibana控制台](../../../../cn.zh-CN/用户指南/可视化控制/Kibana/登录Kibana控制台.md#)，在开发工具页面的Console中执行以下命令创建索引和mapping。
 
@@ -58,7 +58,7 @@
                        "type": "text"       
                    },
                   "id": {
-                       "type": "long"
+                       "type": "integer"
                    },
                     "name" : {
                         "type" : "text"                    
@@ -106,7 +106,7 @@
 
     安装成功会返回如下结果。
 
-    ![MySQL源安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002759224_zh-CN.png)
+    ![MySQL源安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159224_zh-CN.png)
 
 5.  安装MySQL服务器。 
 
@@ -123,7 +123,7 @@
 
     启动成功后会返回如下结果。
 
-    ![启动MySQL并查看状态](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859227_zh-CN.png)
+    ![启动MySQL并查看状态](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159227_zh-CN.png)
 
 7.  连接RDS for MySQL数据库。 
 
@@ -138,7 +138,7 @@
 
         开启时，显示如下结果。
 
-        ![开启MySQL binlog模式](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859233_zh-CN.png)
+        ![开启MySQL binlog模式](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159233_zh-CN.png)
 
     ``` {#codeblock_poc_tfr_4oe}
     mysql -h<主机名> -P<端口> -u<用户名> -p<密码> -D<数据库>
@@ -160,7 +160,7 @@
 
     连接成功后的结果如下所示。
 
-    ![连接RDS MySQL](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859232_zh-CN.png)
+    ![连接RDS MySQL](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159232_zh-CN.png)
 
 
 ## 安装JDK {#section_1uk_499_551 .section}
@@ -192,7 +192,7 @@
         export PATH=$PATH:$JAVA_HOME/bin
         ```
 
-    3.  使用`：wq`保存文件并退出vi模式，执行以下命令使配置生效。 
+    3.  使用`:wq`保存文件并退出vi模式，执行以下命令使配置生效。 
 
         ``` {#codeblock_59m_x99_zg0}
         source /etc/profile
@@ -205,7 +205,7 @@
 
         显示以下结果说明JDK安装成功。
 
-        ![jdk安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859240_zh-CN.png)
+        ![jdk安装成功](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159240_zh-CN.png)
 
 
 ## 安装并启动Canal-server {#section_8jx_g9s_pto .section}
@@ -228,7 +228,7 @@
     vi conf/example/instance.properties
     ```
 
-    ![修改conf/example/instance.properties文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859251_zh-CN.png)
+    ![修改conf/example/instance.properties文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159251_zh-CN.png)
 
     |配置项|说明|
     |---|--|
@@ -244,7 +244,7 @@
     cat logs/canal/canal.log
     ```
 
-    ![启动canal-server](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859254_zh-CN.png)
+    ![启动canal-server](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159254_zh-CN.png)
 
 
 ## 安装并启动Canal-adapter {#section_2tp_qfz_qw5 .section}
@@ -267,7 +267,7 @@
     vi conf/application.yml
     ```
 
-    ![修改conf/application.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859278_zh-CN.png)
+    ![修改conf/application.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159278_zh-CN.png)
 
     |配置项|说明|
     |---|--|
@@ -275,20 +275,20 @@
     |canal.conf.srcDataSources.defaultDS.url|`jdbc:mysql://<RDS for MySQL内网地址>:<内网端口>/<数据库名称>?useUnicode=true`，相关信息可在RDS for MySQL实例的基本信息页面获取。例如`jdbc:mysql://rm-bp1xxxxxxxxxnd6ph.mysql.rds.aliyuncs.com：3306/elasticsearch?useUnicode=true`。|
     |canal.conf.srcDataSources.defaultDS.username|RDS for MySQL数据库的账号名称，可在RDS for MySQL实例的账号管理页面获取。|
     |canal.conf.srcDataSources.defaultDS.password|RDS for MySQL数据库的密码。|
-    |canal.conf.canalAdapters.groups.outerAdapters.hosts|定位到`name:es`的位置，将hosts替换为`<阿里云ES实例的内网地址>:<内网端口>`，相关信息可在ES实例的[基本信息](../../../../cn.zh-CN/实例/实例管理/基本信息.md#)页面获取。例如`es-cn-v64xxxxxxxxx3medp.elasticsearch.aliyuncs.com:9200`。|
+    |canal.conf.canalAdapters.groups.outerAdapters.hosts|定位到`name:es`的位置，将hosts替换为`<阿里云ES实例的内网地址>:<内网端口>`，相关信息可在ES实例的[基本信息](../../../../cn.zh-CN/实例/基本信息/基本信息.md#)页面获取。例如`es-cn-v64xxxxxxxxx3medp.elasticsearch.aliyuncs.com:9200`。|
     |canal.conf.canalAdapters.groups.outerAdapters.mode|必须设置为`rest`。|
     |canal.conf.canalAdapters.groups.outerAdapters.properties.security.auth|`<阿里云ES实例的账号>:<密码>`。例如`elastic:es_password`。|
-    |canal.conf.canalAdapters.groups.outerAdapters.properties.cluster.name|阿里云ES实例的ID，可在实例的[基本信息](../../../../cn.zh-CN/实例/实例管理/基本信息.md#)页面获取。例如`es-cn-v64xxxxxxxxx3medp`。|
+    |canal.conf.canalAdapters.groups.outerAdapters.properties.cluster.name|阿里云ES实例的ID，可在实例的[基本信息](../../../../cn.zh-CN/实例/基本信息/基本信息.md#)页面获取。例如`es-cn-v64xxxxxxxxx3medp`。|
 
 4.  使用:wq命令保存文件并退出vi模式。
 5.  同样的方式，修改conf/es/\*.yml文件，定义MySQL数据到ES数据的映射字段。 
 
-    ![修改conf/es/*.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859280_zh-CN.png)
+    ![修改conf/es/*.yml文件](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159280_zh-CN.png)
 
     |配置项|说明|
     |---|--|
-    |esMapping.\_index|[上文](#)ES实例中所创建的索引的名称。本文使用**es\_test**。|
-    |esMapping.\_type|[上文](#)ES实例中所创建的索引的类型。本文使用**\_doc**。|
+    |esMapping.\_index|[创建表和字段](#)章节中，在ES实例中所创建的索引的名称。本文使用**es\_test**。|
+    |esMapping.\_type|[创建表和字段](#)章节中，在ES实例中所创建的索引的类型。本文使用**\_doc**。|
     |esMapping.\_id|需要同步到ES实例的文档的id，可自定义。本文使用**\_id**。|
     |esMapping.sql|SQL语句，用来查询需要同步到ES中的字段。本文使用`select t.id as _id,t.id,t.count,t.name,t.color from es_test t;`。|
 
@@ -301,7 +301,7 @@
 
     服务启动正常时，结果如下所示。
 
-    ![Canal-adapter服务日志](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859329_zh-CN.png)
+    ![Canal-adapter服务日志](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159329_zh-CN.png)
 
 
 ## 验证Canal自动导出增量数据 {#section_fxm_zna_2n1 .section}
@@ -321,6 +321,6 @@
 
     数据同步成功后，返回如下结果。
 
-    ![数据同步成功结果](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156808002859328_zh-CN.png)
+    ![数据同步成功结果](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1630415/156816764159328_zh-CN.png)
 
 
