@@ -37,38 +37,38 @@ Logstash是一个开源的数据收集引擎，具有实时传输数据的能力
         在您购买的ECS的命令行界面，执行以下命令，创建角色。
 
         ``` {#codeblock_2g5_d8a_yuo}
-        curl -XPOST -H "Content-Type: application/json" -u elastic:es-password http://***instanceId***.elasticsearch.aliyuncs.com:9200/_xpack/security/role/***role-name*** -d '{"cluster": ["manage_index_templates", "monitor"],"indices": [{"names": [ "logstash-*" ], "privileges":["write","delete","create_index"]}]}'
+        curl -XPOST -H "Content-Type: application/json" -u elastic:es-password http://instanceId.elasticsearch.aliyuncs.com:9200/_xpack/security/role/role-name -d '{"cluster": ["manage_index_templates", "monitor"],"indices": [{"names": [ "logstash-*" ], "privileges":["write","delete","create_index"]}]}'
         ```
 
-        -   `es-password`：阿里云Elasticsearch实例的密码，即您登录Kibana控制台的密码。
-        -   `***instanceId***`：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
-        -   `***role-name***`：您想使用的角色名称。
+        -   es-password：阿里云Elasticsearch实例的密码，即您登录Kibana控制台的密码。
+        -   instanceId：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
+        -   role-name：您想使用的角色名称。
         **说明：** 
 
         -   Logstash默认的索引名称以`logstash-当前日期`命名，所以在添加用户角色的时候，需要有对`logstash-*`索引开放读写权限。
         -   您也可以在Kibana控制台中创建角色。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093766940177_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240177_zh-CN.png)
 
     2.  创建用户。
 
         在您购买的ECS的命令行界面，执行以下命令，创建用户。
 
         ``` {#codeblock_32k_x7f_o0n}
-        curl -XPOST -H "Content-Type: application/json" -u elastic:es-password http://***instanceId***.elasticsearch.aliyuncs.com:9200/_xpack/security/user/***user-name*** -d '{"password" : "***logstash-password***","roles" : ["***role-name***"],"full_name" : "***your full name***"}'
+        curl -XPOST -H "Content-Type: application/json" -u elastic:es-password http://instanceId.elasticsearch.aliyuncs.com:9200/_xpack/security/user/user-name -d '{"password" : "logstash-password","roles" : ["role-name"],"full_name" : "your full name"}'
         ```
 
-        -   `es-password`：阿里云Elasticsearch实例的密码，即您登录Kibana控制台的密码。
-        -   `***instanceId***`：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
-        -   `***user-name***`：您想创建的数据接入的用户名。
-        -   `***logstash-password***`：您创建的数据接入用户的密码。
-        -   `***role-name***`：您[上一步](#)创建的角色的名称。
-        -   `***your full name***`：当前用户名的全名描述。
+        -   es-password：阿里云Elasticsearch实例的密码，即您登录Kibana控制台的密码。
+        -   instanceId：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
+        -   user-name：您想创建的数据接入的用户名。
+        -   logstash-password：您创建的数据接入用户的密码。
+        -   role-name：您[上一步](#)创建的角色的名称。
+        -   your full name：当前用户名的全名描述。
         **说明：** 
 
         您也可以在Kibana控制台中创建用户。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093766940178_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240178_zh-CN.png)
 
         上图中的**Roles**需要选择您上一步创建的角色名称。
 
@@ -86,9 +86,9 @@ Logstash是一个开源的数据收集引擎，具有实时传输数据的能力
     }
     output {
       elasticsearch {
-        hosts => ["http://***instanceId***.elasticsearch.aliyuncs.com:9200"]
-        user => "***user-name***"
-        password => "***logstash-password***"
+        hosts => ["http://instanceId.elasticsearch.aliyuncs.com:9200"]
+        user => "user-name"
+        password => "logstash-password"
       }
     }
     ```
@@ -97,9 +97,9 @@ Logstash是一个开源的数据收集引擎，具有实时传输数据的能力
 
     Logstash提供了丰富的input、filter、output插件，只需要简单的配置就可是实现数据的流转，详情请参见官方[配置文件结构](https://www.elastic.co/guide/en/logstash/5.5/configuration-file-structure.html)文档。
 
-    -   `***instanceId***`：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
-    -   `***user-name***`：您[上一步](#)中创建的数据接入的用户名。
-    -   `***logstash-password***`：您[上一步](#)中创建的数据接入用户的密码。
+    -   instanceId：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
+    -   user-name：您[上一步](#)中创建的数据接入的用户名。
+    -   logstash-password：您[上一步](#)中创建的数据接入用户的密码。
 
         **说明：** 用户名和密码需要使用英文引号，防止特殊字符在启动logstash时报错。
 
@@ -134,24 +134,25 @@ Logstash是一个开源的数据收集引擎，具有实时传输数据的能力
     -   通过命令行方式添加用户。
 
         ``` {#codeblock_5m3_jpg_0bd}
-        curl -u elastic:es-password -XPOST http://***instanceId***.elasticsearch.aliyuncs.com:9200/_xpack/security/user/logstash_system_monitor -d '{"password" : "***logstash-monitor-password***","roles" : ["logstash_system"],"full_name" : "your full name"}'
+        curl -u elastic:es-password -XPOST http://instanceId.elasticsearch.aliyuncs.com:9200/_xpack/security/user/logstash_system_monitor -d '{"password" : "logstash-monitor-password","roles" : ["logstash_system"],"full_name" : "your full name"}'
         ```
 
-        -   `es-password`：阿里云Elasticsearch实例的密码，即您登录Kibana控制台的密码。
-        -   `***instanceId***`：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
-        -   `***logstash-monitor-password***`：您创建的`logstash_system_monitor`用户的密码。
+        -   es-password：阿里云Elasticsearch实例的密码，即您登录Kibana控制台的密码。
+        -   instanceId：阿里云Elasticsearch实例的ID，可在实例的基本信息页面获取。
+        -   logstash-monitor-password：您创建的`logstash_system_monitor`用户的密码。
+        -   your full name：当前用户名的全名描述。
     -   通过Kibana控制台添加监控用户。
         1.  进入Kibana控制台，单击**Management** \> **Users**。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093766940183_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240183_zh-CN.png)
 
         2.  在Users页面，单击**Create user**。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093767040184_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240184_zh-CN.png)
 
         3.  输入下图所示的配置信息，单击**Save**。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093767040185_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240185_zh-CN.png)
 
 
 ## 常见问题 {#section_cdf_d2t_zgb .section}
@@ -162,25 +163,25 @@ Logstash是一个开源的数据收集引擎，具有实时传输数据的能力
 
     Logstash在上传数据的时候，使用的是提交数据的方式创建索引，而不是使用create index API的方式。所以在使用Logstash上传数据之前，需要首先把集群的**自动创建索引**设置为允许。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093767040179_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240179_zh-CN.png)
 
     **说明：** 修改配置并确认后，阿里云Elasticsearch会自动重启，为保证您的业务不受影响，请谨慎操作。
 
 -   创建索引时提示没有权限。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093767140180_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240180_zh-CN.png)
 
     请检查您创建的接入数据的用户拥有的角色，是否具有write、delete、create\_index权限。
 
 -   系统提示内存不足。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093767140181_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943240181_zh-CN.png)
 
     Logstash默认配置的是1GB的内存，如果您申请的ECS内存不足，可以修改config/jvm.options中的内存配置，适当调小Logstash内存的使用。
 
 -   配置test.conf时，用户名和密码没有添加引号。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156093767140182_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/134317/156888943340182_zh-CN.png)
 
     如果在配置您的任务文件时（上文提到的test.conf文件），用户名和密码中有特殊字符但是又没有用引号括起来，就会出现上述的错误信息。
 
