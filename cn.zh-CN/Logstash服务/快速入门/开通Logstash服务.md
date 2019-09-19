@@ -10,10 +10,10 @@
 1.  登录[阿里云Elasticsearch控制台](https://elasticsearch.console.aliyun.com)。
 2.  单击左侧导航栏的**Logstash实例**。
 3.  在Logstash实例列表页面，单击**创建**。
-4.  在阿里云LogstashService购买页面，选择付费方式和实例配置。![开通Logstash服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1708832/156885467760332_zh-CN.png)
+4.  在阿里云LogstashService购买页面，选择付费方式和实例配置。![开通Logstash服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1708832/156885572360332_zh-CN.png)
 
  配置参数详情请参见[购买页面参数](cn.zh-CN/Logstash服务/购买页面参数.md#)。
-5.  单击**立即购买**
+5.  单击**立即购买**。
 6.  在确认订单页面，查看实例配置信息，无误后，勾选服务协议，单击**去开通**。 开通成功后，系统显示**开通成功**。
 7.  返回Logstash实例列表页面，查看创建成功的Logstash实例。
 
