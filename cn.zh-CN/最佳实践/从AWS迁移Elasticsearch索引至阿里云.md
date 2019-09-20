@@ -14,7 +14,7 @@
 -   **Kibana**：您可以使用Kibana对您的Elasticsearch数据进行可视化并导航弹性堆栈。
 -   **亚马逊Elasticsearch服务（Amazon Elasticsearch Service）**： 一项完全托管的服务，可以提供各种易于使用的Elasticsearch API 和实时分析功能，还可以实现生产工作负载需要的可用性、可扩展性和安全性。您可以使用AmazonElasticsearch Service轻松部署、保护、操作和扩展Elasticsearch，以便进行日志分析、全文搜索和应用程序监控等工作。
 -   **阿里云Elasticsearch服务（Alibaba Elasticsearch Service）**： 该服务在国际站还未上线，本文涉及的操作主要在阿里云Elasticsearch服务中国站上进行。
--   **快照和恢复（Snapshotand Restore）**：您可以使用快照和恢复功能将各个索引或整个集群的快照创建到远程存储库（如共享文件系统，S3或HDFS）中。这些快照可以相对快速恢复，因此非常适合备份。但这些快照只能恢复到可以读取索引的Elasticsearch版本：
+-   **快照和恢复（Snapshot and Restore）**：您可以使用快照和恢复功能将各个索引或整个集群的快照创建到远程存储库（如共享文件系统，S3或HDFS）中。这些快照可以相对快速恢复，因此非常适合备份。但这些快照只能恢复到可以读取索引的Elasticsearch版本：
 
     -   在5.x中创建的索引快照可以恢复到6.x。
     -   在2.x中创建的索引快照可以恢复到5.x。
